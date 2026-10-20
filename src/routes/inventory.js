@@ -1,36 +1,22 @@
 import { Router } from 'express';
 import { pool } from '../db/pool.js';
-import { verifyAccessToken } from '../auth/jwt.js';
+import { requireAuth } from '../middleware/auth.js';
 
 const router = Router();
-
-// Helper helper to get userId (with fallback to demo user)
-async function getUserId(req) {
-  const authHeader = req.get('authorization');
-  if (authHeader?.startsWith('Bearer ')) {
-    const token = authHeader.slice('Bearer '.length).trim();
-    try {
-      const payload = verifyAccessToken(token);
-      if (payload?.sub) return payload.sub;
-    } catch (_) {}
-  }
-  // Fallback to first user
-  const userRes = await pool.query("SELECT id FROM users LIMIT 1");
-  return userRes.rows[0]?.id || null;
-}
+router.use(requireAuth);
 
 // -------------------------------------------------------------
 // GET /api/inventory - Lấy danh sách nguyên liệu trong kho
 // -------------------------------------------------------------
 router.get('/inventory', async (req, res, next) => {
   try {
-    const userId = await getUserId(req);
+    const userId = req.auth.userId;
     const { category, q } = req.query;
 
     let query = `
       SELECT id, name, quantity, unit, calories, protein, carbs, fat, category, icon, created_at
       FROM user_inventory
-      WHERE (user_id = $1 OR user_id IS NULL)
+      WHERE user_id = $1
     `;
     const params = [userId];
 
@@ -72,7 +58,7 @@ router.get('/inventory', async (req, res, next) => {
 // -------------------------------------------------------------
 router.post('/inventory', async (req, res, next) => {
   try {
-    const userId = await getUserId(req);
+    const userId = req.auth.userId;
     const { items = [] } = req.body;
 
     if (!Array.isArray(items) || items.length === 0) {
@@ -118,7 +104,7 @@ router.post('/inventory/:id/consume', async (req, res, next) => {
     const { id } = req.params;
     const { amount = 0, deleteIfDepleted = true } = req.body;
 
-    const currentRes = await pool.query('SELECT * FROM user_inventory WHERE id = $1', [id]);
+    const currentRes = await pool.query('SELECT * FROM user_inventory WHERE id = $1 AND user_id = $2', [id, req.auth.userId]);
     if (currentRes.rows.length === 0) {
       return res.status(404).json({ message: 'Không tìm thấy nguyên liệu trong kho.' });
     }
@@ -127,12 +113,12 @@ router.post('/inventory/:id/consume', async (req, res, next) => {
     const newQty = Number(currentItem.quantity) - Number(amount);
 
     if (newQty <= 0 && deleteIfDepleted) {
-      await pool.query('DELETE FROM user_inventory WHERE id = $1', [id]);
+      await pool.query('DELETE FROM user_inventory WHERE id = $1 AND user_id = $2', [id, req.auth.userId]);
       return res.json({ message: 'Đã sử dụng hết nguyên liệu.', deleted: true });
     } else {
       const updateRes = await pool.query(
-        'UPDATE user_inventory SET quantity = $1, updated_at = NOW() WHERE id = $2 RETURNING *',
-        [Math.max(0, newQty), id]
+        'UPDATE user_inventory SET quantity = $1, updated_at = NOW() WHERE id = $2 AND user_id = $3 RETURNING *',
+        [Math.max(0, newQty), id, req.auth.userId]
       );
       return res.json({ message: 'Đã cập nhật số lượng tồn kho.', item: updateRes.rows[0] });
     }
@@ -147,7 +133,7 @@ router.post('/inventory/:id/consume', async (req, res, next) => {
 router.delete('/inventory/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
-    await pool.query('DELETE FROM user_inventory WHERE id = $1', [id]);
+    await pool.query('DELETE FROM user_inventory WHERE id = $1 AND user_id = $2', [id, req.auth.userId]);
     res.json({ message: 'Đã xóa nguyên liệu khỏi kho.' });
   } catch (error) {
     next(error);

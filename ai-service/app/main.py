@@ -8,11 +8,24 @@ machines on the LAN (and from the Docker host / other containers).
 
 import os
 import logging
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers import detect
+from app.services.yolo_service import warm_model
+
+
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    # Weight loading is kept off the first user's request. If weights are absent,
+    # keep the API alive so /health works and /detect can return its 503 response.
+    try:
+        warm_model()
+    except Exception:
+        logger.exception("Could not warm the food detection model at startup")
+    yield
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -30,6 +43,7 @@ app = FastAPI(
     title="EatGym AI Service",
     description="YOLOv8‑powered food detection API for the EatGym platform.",
     version="1.0.0",
+    lifespan=lifespan,
 )
 
 # CORS – cho phép Node.js API và mobile app gọi tới

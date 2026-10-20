@@ -1,220 +1,94 @@
 import { Router } from 'express';
 import { pool } from '../db/pool.js';
+import { ApiError } from '../errors.js';
 import { requireAuth } from '../middleware/auth.js';
 
 const router = Router();
+router.use(requireAuth);
+const MEALS = new Set(['breakfast', 'lunch', 'dinner', 'snack']);
 
-// Middleware: allow authenticated user or fallback for demo
-router.use((req, res, next) => {
-  requireAuth(req, res, (err) => {
-    if (err) {
-      // If no valid auth header, continue with undefined user
-      return next();
-    }
-    next();
-  });
-});
-
-// Helper to get active user ID or default user
-async function getUserId(req) {
-  if (req.user && req.user.id) {
-    return req.user.id;
-  }
-  const defaultUser = await pool.query('SELECT id FROM users ORDER BY created_at ASC LIMIT 1');
-  return defaultUser.rows[0]?.id || null;
+function isoDate(value) {
+  if (!(value instanceof Date)) return String(value).slice(0, 10);
+  return `${value.getFullYear()}-${String(value.getMonth() + 1).padStart(2, '0')}-${String(value.getDate()).padStart(2, '0')}`;
 }
 
-// -------------------------------------------------------------
-// GET /api/nutrition-logs?date=YYYY-MM-DD
-// -------------------------------------------------------------
+function date(value, field) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) throw new ApiError(422, `${field} must use YYYY-MM-DD format.`, 'VALIDATION_ERROR', { field });
+  const [y, m, d] = value.split('-').map(Number);
+  const parsed = new Date(Date.UTC(y, m - 1, d));
+  if (parsed.getUTCFullYear() !== y || parsed.getUTCMonth() !== m - 1 || parsed.getUTCDate() !== d) throw new ApiError(422, `${field} must be a valid calendar date.`, 'VALIDATION_ERROR', { field });
+  return value;
+}
+
+function numeric(value, field, fallback, min = 0, max = 100000) {
+  const number = value === undefined ? fallback : value;
+  if (typeof number !== 'number' || !Number.isFinite(number) || number < min || number > max) throw new ApiError(422, `${field} must be a number from ${min} to ${max}.`, 'VALIDATION_ERROR', { field });
+  return number;
+}
+
 router.get('/nutrition-logs', async (req, res, next) => {
   try {
-    const userId = await getUserId(req);
-    const dateStr = req.query.date || new Date().toISOString().split('T')[0];
-
+    const logDate = req.query.date ? date(req.query.date, 'date') : new Date().toISOString().slice(0, 10);
     const result = await pool.query(
-      `
-      SELECT id, log_date, meal_type, food_name, serving_size, serving_unit,
-             calories, protein, carbs, fat, created_at
-      FROM nutrition_logs
-      WHERE (user_id = $1 OR user_id IS NULL) AND log_date = $2
-      ORDER BY created_at ASC
-      `,
-      [userId, dateStr]
+      `SELECT id, log_date, meal_type, food_name, serving_size, serving_unit, calories, protein, carbs, fat, created_at
+       FROM nutrition_logs WHERE user_id = $1 AND log_date = $2 ORDER BY created_at`, [req.auth.userId, logDate]
     );
-
-    const meals = {
-      breakfast: { items: [], totalCalories: 0 },
-      lunch: { items: [], totalCalories: 0 },
-      dinner: { items: [], totalCalories: 0 },
-      snack: { items: [], totalCalories: 0 },
-    };
-
-    let totalCalories = 0;
-    let totalProtein = 0;
-    let totalCarbs = 0;
-    let totalFat = 0;
-
+    const meals = Object.fromEntries([...MEALS].map((meal) => [meal, { items: [], totalCalories: 0 }]));
+    const totals = { totalCalories: 0, totalProtein: 0, totalCarbs: 0, totalFat: 0 };
     for (const row of result.rows) {
-      const type = (row.meal_type || 'breakfast').toLowerCase();
-      const cal = Number(row.calories) || 0;
-      const pro = Number(row.protein) || 0;
-      const carb = Number(row.carbs) || 0;
-      const fat = Number(row.fat) || 0;
-
-      const item = {
-        id: row.id,
-        foodName: row.food_name,
-        servingSize: Number(row.serving_size) || 1,
-        servingUnit: row.serving_unit || 'phần',
-        calories: cal,
-        protein: pro,
-        carbs: carb,
-        fat: fat,
-      };
-
-      if (!meals[type]) {
-        meals[type] = { items: [], totalCalories: 0 };
-      }
-      meals[type].items.push(item);
-      meals[type].totalCalories += cal;
-
-      totalCalories += cal;
-      totalProtein += pro;
-      totalCarbs += carb;
-      totalFat += fat;
+      const item = { id: row.id, foodName: row.food_name, servingSize: Number(row.serving_size), servingUnit: row.serving_unit,
+        calories: Number(row.calories), protein: Number(row.protein), carbs: Number(row.carbs), fat: Number(row.fat), createdAt: row.created_at };
+      meals[row.meal_type].items.push(item);
+      meals[row.meal_type].totalCalories += item.calories;
+      totals.totalCalories += item.calories; totals.totalProtein += item.protein; totals.totalCarbs += item.carbs; totals.totalFat += item.fat;
     }
-
-    res.json({
-      date: dateStr,
-      meals,
-      summary: {
-        totalCalories: Math.round(totalCalories),
-        totalProtein: Math.round(totalProtein),
-        totalCarbs: Math.round(totalCarbs),
-        totalFat: Math.round(totalFat),
-      },
-    });
-  } catch (error) {
-    next(error);
-  }
+    for (const meal of Object.values(meals)) meal.totalCalories = Math.round(meal.totalCalories);
+    res.json({ date: logDate, meals, summary: Object.fromEntries(Object.entries(totals).map(([key, value]) => [key, Math.round(value)])) });
+  } catch (error) { next(error); }
 });
 
-// -------------------------------------------------------------
-// GET /api/nutrition-logs/summary
-// -------------------------------------------------------------
 router.get('/nutrition-logs/summary', async (req, res, next) => {
   try {
-    const userId = await getUserId(req);
-    const { from, to } = req.query;
-
-    let query = `
-      SELECT DATE(log_date) as date,
-             SUM(calories) as total_calories,
-             SUM(protein) as total_protein,
-             SUM(carbs) as total_carbs,
-             SUM(fat) as total_fat
-      FROM nutrition_logs
-      WHERE (user_id = $1 OR user_id IS NULL)
-    `;
-    const params = [userId];
-
-    if (from) {
-      params.push(from);
-      query += ` AND log_date >= $${params.length}`;
-    }
-    if (to) {
-      params.push(to);
-      query += ` AND log_date <= $${params.length}`;
-    }
-
-    query += ' GROUP BY DATE(log_date) ORDER BY date ASC';
-
-    const result = await pool.query(query, params);
-    res.json({
-      summary: result.rows.map((r) => ({
-        date: r.date,
-        totalCalories: Math.round(Number(r.total_calories) || 0),
-        totalProtein: Math.round(Number(r.total_protein) || 0),
-        totalCarbs: Math.round(Number(r.total_carbs) || 0),
-        totalFat: Math.round(Number(r.total_fat) || 0),
-      })),
-    });
-  } catch (error) {
-    next(error);
-  }
+    const from = req.query.from ? date(req.query.from, 'from') : null;
+    const to = req.query.to ? date(req.query.to, 'to') : null;
+    if (from && to && to < from) throw new ApiError(422, 'to must be on or after from.', 'VALIDATION_ERROR', { field: 'to' });
+    const result = await pool.query(
+      `SELECT log_date AS date, SUM(calories) AS total_calories, SUM(protein) AS total_protein,
+              SUM(carbs) AS total_carbs, SUM(fat) AS total_fat FROM nutrition_logs
+       WHERE user_id = $1 AND ($2::date IS NULL OR log_date >= $2) AND ($3::date IS NULL OR log_date <= $3)
+       GROUP BY log_date ORDER BY log_date`, [req.auth.userId, from, to]
+    );
+    res.json({ summary: result.rows.map((row) => ({ date: isoDate(row.date), totalCalories: Math.round(Number(row.total_calories)), totalProtein: Math.round(Number(row.total_protein)), totalCarbs: Math.round(Number(row.total_carbs)), totalFat: Math.round(Number(row.total_fat)) })) });
+  } catch (error) { next(error); }
 });
 
-// -------------------------------------------------------------
-// POST /api/nutrition-logs
-// -------------------------------------------------------------
 router.post('/nutrition-logs', async (req, res, next) => {
   try {
-    const userId = await getUserId(req);
-    const {
-      logDate,
-      mealType = 'breakfast',
-      foodName,
-      servingSize = 1,
-      servingUnit = 'phần',
-      calories = 0,
-      protein = 0,
-      carbs = 0,
-      fat = 0,
-    } = req.body;
-
-    if (!foodName || !foodName.trim()) {
-      return res.status(400).json({ error: 'foodName is required' });
-    }
-
-    const dateVal = logDate || new Date().toISOString().split('T')[0];
-
+    const input = req.body;
+    if (!input || typeof input !== 'object' || Array.isArray(input)) throw new ApiError(422, 'Request body must be a JSON object.', 'VALIDATION_ERROR');
+    const foodName = typeof input.foodName === 'string' ? input.foodName.trim() : '';
+    if (!foodName || foodName.length > 200) throw new ApiError(422, 'foodName is required and must be at most 200 characters.', 'VALIDATION_ERROR', { field: 'foodName' });
+    const mealType = input.mealType ?? 'breakfast';
+    if (!MEALS.has(mealType)) throw new ApiError(422, 'mealType must be breakfast, lunch, dinner, or snack.', 'VALIDATION_ERROR', { field: 'mealType' });
+    const logDate = input.logDate ? date(input.logDate, 'logDate') : new Date().toISOString().slice(0, 10);
+    const servingUnit = input.servingUnit ?? 'portion';
+    if (typeof servingUnit !== 'string' || !servingUnit.trim() || servingUnit.length > 32) throw new ApiError(422, 'servingUnit must be a non-empty string up to 32 characters.', 'VALIDATION_ERROR', { field: 'servingUnit' });
+    const values = [req.auth.userId, logDate, mealType, foodName, numeric(input.servingSize, 'servingSize', 1, Number.MIN_VALUE), servingUnit.trim(), numeric(input.calories, 'calories', 0), numeric(input.protein, 'protein', 0), numeric(input.carbs, 'carbs', 0), numeric(input.fat, 'fat', 0)];
     const result = await pool.query(
-      `
-      INSERT INTO nutrition_logs (
-        user_id, log_date, meal_type, food_name, serving_size, serving_unit,
-        calories, protein, carbs, fat
-      )
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
-      RETURNING *
-      `,
-      [
-        userId,
-        dateVal,
-        mealType.toLowerCase(),
-        foodName.trim(),
-        Number(servingSize) || 1,
-        servingUnit,
-        Number(calories) || 0,
-        Number(protein) || 0,
-        Number(carbs) || 0,
-        Number(fat) || 0,
-      ]
+      `INSERT INTO nutrition_logs (user_id, log_date, meal_type, food_name, serving_size, serving_unit, calories, protein, carbs, fat)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING *`, values
     );
-
-    res.status(201).json({ log: result.rows[0] });
-  } catch (error) {
-    next(error);
-  }
+    const row = result.rows[0];
+    res.status(201).json({ log: { ...row, log_date: isoDate(row.log_date) } });
+  } catch (error) { next(error); }
 });
 
-// -------------------------------------------------------------
-// DELETE /api/nutrition-logs/:id
-// -------------------------------------------------------------
 router.delete('/nutrition-logs/:id', async (req, res, next) => {
   try {
-    const userId = await getUserId(req);
-    const { id } = req.params;
-
-    await pool.query(
-      'DELETE FROM nutrition_logs WHERE id = $1 AND (user_id = $2 OR user_id IS NULL)',
-      [id, userId]
-    );
-
-    res.json({ success: true });
-  } catch (error) {
-    next(error);
-  }
+    const result = await pool.query('DELETE FROM nutrition_logs WHERE id = $1 AND user_id = $2 RETURNING id', [req.params.id, req.auth.userId]);
+    if (!result.rowCount) throw new ApiError(404, 'Nutrition log not found.', 'NUTRITION_LOG_NOT_FOUND');
+    res.json({ success: true, id: result.rows[0].id });
+  } catch (error) { next(error); }
 });
 
 export default router;

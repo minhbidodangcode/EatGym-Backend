@@ -1,0 +1,263 @@
+@baseUrl = http://localhost:3000
+@token = {{login.response.body.$.accessToken}}
+@recipeId = REPLACE_WITH_RECIPE_UUID
+@ingredientId = REPLACE_WITH_INGREDIENT_UUID
+@logId = REPLACE_WITH_LOG_UUID
+@deviationId = REPLACE_WITH_DEVIATION_UUID
+@targetDate = 2026-10-19
+@batchId = REPLACE_WITH_BATCH_UUID
+@yieldFactorId = REPLACE_WITH_YIELD_FACTOR_UUID
+
+### Health
+GET {{baseUrl}}/health
+
+### Register (run once, then use the returned accessToken)
+# @name register
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "an@example.com",
+  "fullName": "Nguyen Van An",
+  "password": "mat-khau-it-nhat-8-ky-tu"
+}
+
+### Login
+# @name login
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "an@example.com",
+  "password": "mat-khau-it-nhat-8-ky-tu"
+}
+
+### Current account
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer {{token}}
+
+### Calculate BMR/TDEE without saving
+POST {{baseUrl}}/api/nutrition/calculate
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "sex": "male",
+  "age": 21,
+  "heightCm": 175,
+  "weightKg": 72.5,
+  "activityLevel": "moderate",
+  "fitnessGoal": "cutting"
+}
+
+### Get physical profile
+GET {{baseUrl}}/api/profile
+Authorization: Bearer {{token}}
+
+### Save onboarding/profile including allergy and diet preferences
+PUT {{baseUrl}}/api/profile
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "sex": "male",
+  "dateOfBirth": "2005-09-14",
+  "heightCm": 175,
+  "weightKg": 72.5,
+  "activityLevel": "moderate",
+  "fitnessGoal": "cutting",
+  "allergies": ["peanut", "shellfish"],
+  "dietaryPreferences": ["high-protein"],
+  "targetMacros": { "calories": 2200, "protein": 160, "carbs": 240, "fat": 65 }
+}
+
+### Body stats history
+GET {{baseUrl}}/api/profile/stats
+Authorization: Bearer {{token}}
+
+### Save a body stats measurement
+POST {{baseUrl}}/api/profile/stats
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "measuredOn": "2026-10-18",
+  "weightKg": 72.5,
+  "heightCm": 175,
+  "bodyFatPercent": 18.5
+}
+
+### List/search ingredients
+GET {{baseUrl}}/api/ingredients?q=chicken
+
+### List/search recipes
+GET {{baseUrl}}/api/recipes?q=salad
+
+### Suggest recipes using ingredients, saved allergies and dietary preferences
+POST {{baseUrl}}/api/recipes/suggest
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "ingredients": ["chicken", "rice"],
+  "maxTime": 30
+}
+
+### List favorite recipes
+GET {{baseUrl}}/api/favorites/recipes
+Authorization: Bearer {{token}}
+
+### Save favorite recipe
+PUT {{baseUrl}}/api/favorites/recipes/{{recipeId}}
+Authorization: Bearer {{token}}
+
+### Remove favorite recipe
+DELETE {{baseUrl}}/api/favorites/recipes/{{recipeId}}
+Authorization: Bearer {{token}}
+
+### List favorite ingredients
+GET {{baseUrl}}/api/favorites/ingredients
+Authorization: Bearer {{token}}
+
+### Save favorite ingredient
+PUT {{baseUrl}}/api/favorites/ingredients/{{ingredientId}}
+Authorization: Bearer {{token}}
+
+### Remove favorite ingredient
+DELETE {{baseUrl}}/api/favorites/ingredients/{{ingredientId}}
+Authorization: Bearer {{token}}
+
+### Inventory list/add/consume/delete
+GET {{baseUrl}}/api/inventory
+Authorization: Bearer {{token}}
+
+### Add inventory items
+POST {{baseUrl}}/api/inventory
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "items": [{ "name": "Chicken breast", "quantity": 500, "unit": "g", "calories": 600, "protein": 130, "carbs": 0, "fat": 9 }]
+}
+
+### Consume inventory item (replace UUID)
+POST {{baseUrl}}/api/inventory/REPLACE_WITH_INVENTORY_UUID/consume
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "amount": 100 }
+
+### Delete inventory item (replace UUID)
+DELETE {{baseUrl}}/api/inventory/REPLACE_WITH_INVENTORY_UUID
+Authorization: Bearer {{token}}
+
+### Nutrition logs for one day
+GET {{baseUrl}}/api/nutrition-logs?date=2026-10-18
+Authorization: Bearer {{token}}
+
+### Nutrition log summaries
+GET {{baseUrl}}/api/nutrition-logs/summary?from=2026-10-01&to=2026-10-18
+Authorization: Bearer {{token}}
+
+### Add nutrition log entry
+POST {{baseUrl}}/api/nutrition-logs
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "logDate": "2026-10-18",
+  "mealType": "lunch",
+  "foodName": "Chicken rice bowl",
+  "servingSize": 1,
+  "servingUnit": "portion",
+  "calories": 620,
+  "protein": 45,
+  "carbs": 72,
+  "fat": 14
+}
+
+### Delete nutrition log entry
+DELETE {{baseUrl}}/api/nutrition-logs/{{logId}}
+Authorization: Bearer {{token}}
+
+### Create/update meal target (compensation API)
+PUT {{baseUrl}}/api/nutrition/meal-targets/{{targetDate}}/lunch
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "plannedKcal": 650 }
+
+### Get meal targets
+GET {{baseUrl}}/api/nutrition/meal-targets?from=2026-10-19&to=2026-10-20
+Authorization: Bearer {{token}}
+
+### Record a calorie deviation
+POST {{baseUrl}}/api/nutrition/deviations
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "occurredOn": "2026-10-18", "targetKcal": 2000, "actualKcal": 2300, "note": "Dinner out" }
+
+### Compensate an excess over the next one or two days
+POST {{baseUrl}}/api/nutrition/compensations
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "deviationId": "{{deviationId}}", "horizonDays": 2, "minKcalPerMeal": 300 }
+
+### Meal-prep yield factors and conversion
+GET {{baseUrl}}/api/meal-prep/yield-factors?search=chicken
+Authorization: Bearer {{token}}
+
+### Add a meal-prep yield factor (admin role required)
+POST {{baseUrl}}/api/meal-prep/yield-factors
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "ingredientName": "Chicken breast", "cookingMethod": "Grilled", "rawToCookedFactor": 0.75, "source": "Measured batch" }
+
+### Convert ingredient weight
+POST {{baseUrl}}/api/meal-prep/convert
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "yieldFactorId": "{{yieldFactorId}}", "inputWeightG": 500, "inputState": "raw", "servings": 4 }
+
+### Create and read a meal-prep batch
+POST {{baseUrl}}/api/meal-prep/batches
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Chicken prep",
+  "servings": 4,
+  "items": [{ "yieldFactorId": "{{yieldFactorId}}", "inputWeightG": 800, "inputState": "raw" }]
+}
+
+GET {{baseUrl}}/api/meal-prep/batches/{{batchId}}
+Authorization: Bearer {{token}}
+
+### Cooking streak and cooking day
+GET {{baseUrl}}/api/achievements/streak
+Authorization: Bearer {{token}}
+
+POST {{baseUrl}}/api/achievements/cooking-days
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "cookedOn": "2026-10-18", "note": "Meal prep" }
+
+### Earned badges
+GET {{baseUrl}}/api/achievements/badges
+Authorization: Bearer {{token}}
+
+### AI food detection (multipart form; choose an image file)
+POST {{baseUrl}}/api/v1/detect
+Content-Type: multipart/form-data; boundary=EatGymBoundary
+
+--EatGymBoundary
+Content-Disposition: form-data; name="file"; filename="meal.jpg"
+Content-Type: image/jpeg
+
+< ./meal.jpg
+--EatGymBoundary--

@@ -7,6 +7,7 @@ and exposes a prediction function used by the router.
 
 import logging
 import os
+import threading
 from pathlib import Path
 
 from ultralytics import YOLO
@@ -22,20 +23,24 @@ _MODEL_PATH = os.getenv(
 )
 
 _model: YOLO | None = None
+_model_lock = threading.Lock()
+_inference_lock = threading.Lock()
 
 
 def get_model() -> YOLO:
     """Return the cached YOLO model, loading it on first call."""
     global _model
     if _model is None:
-        logger.info("Loading YOLOv8 model from %s …", _MODEL_PATH)
-        if not Path(_MODEL_PATH).exists():
-            raise FileNotFoundError(
-                f"Model file not found: {_MODEL_PATH}. "
-                "Place your yolov8_food.pt in the ai-service/models/ directory."
-            )
-        _model = YOLO(_MODEL_PATH)
-        logger.info("Model loaded successfully (%d classes).", len(_model.names))
+        with _model_lock:
+            if _model is None:
+                logger.info("Loading YOLOv8 model from %s", _MODEL_PATH)
+                if not Path(_MODEL_PATH).exists():
+                    raise FileNotFoundError(
+                        f"Model file not found: {_MODEL_PATH}. "
+                        "Place your yolov8_food.pt in the ai-service/models/ directory."
+                    )
+                _model = YOLO(_MODEL_PATH)
+                logger.info("Model loaded successfully (%d classes).", len(_model.names))
     return _model
 
 
@@ -58,9 +63,13 @@ def predict(image_bytes: bytes, conf: float = 0.25):
     from PIL import Image
 
     model = get_model()
-    image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
+    with Image.open(io.BytesIO(image_bytes)) as source:
+        source.thumbnail((1280, 1280), Image.Resampling.BILINEAR)
+        image = source.convert("RGB")
 
-    results = model.predict(source=image, conf=conf, verbose=False)
+    image_size = int(os.getenv("YOLO_IMAGE_SIZE", "640"))
+    with _inference_lock:
+        results = model.predict(source=image, conf=conf, imgsz=image_size, verbose=False, stream=False)
 
     detections = []
     for result in results:
@@ -77,3 +86,13 @@ def predict(image_bytes: bytes, conf: float = 0.25):
             )
 
     return detections
+
+
+def warm_model() -> None:
+    """Load weights during application startup so the first request avoids disk/model initialization."""
+    from PIL import Image
+
+    model = get_model()
+    warmup_size = int(os.getenv("YOLO_IMAGE_SIZE", "640"))
+    with _inference_lock:
+        model.predict(source=Image.new("RGB", (warmup_size, warmup_size)), imgsz=warmup_size, verbose=False, stream=False)

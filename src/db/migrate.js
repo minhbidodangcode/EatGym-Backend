@@ -1,8 +1,8 @@
-import { createHash } from 'node:crypto';
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { pool } from './pool.js';
+import { migrationChecksum } from './migration-checksum.js';
 
 const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
 const migrationsDirectory = path.resolve(currentDirectory, '../../sql');
@@ -25,7 +25,7 @@ async function migrate() {
 
     for (const filename of files) {
       const sql = await readFile(path.join(migrationsDirectory, filename), 'utf8');
-      const checksum = createHash('sha256').update(sql).digest('hex');
+      const checksum = migrationChecksum(sql);
       const existing = await client.query(
         'SELECT checksum FROM schema_migrations WHERE filename = $1',
         [filename]

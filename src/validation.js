@@ -73,7 +73,26 @@ export function validateProfile(body) {
   if (typeof input.dateOfBirth !== 'string') {
     fail('dateOfBirth', 'dateOfBirth must use YYYY-MM-DD format.');
   }
-  return { ...validateNutritionFields(input), dateOfBirth: input.dateOfBirth };
+  const stringList = (value, field) => {
+    if (value === undefined) return [];
+    if (!Array.isArray(value) || value.length > 50 || value.some((item) => typeof item !== 'string' || !item.trim() || item.length > 80)) {
+      fail(field, `${field} must be an array of up to 50 non-empty strings (80 characters max).`);
+    }
+    return [...new Set(value.map((item) => item.trim()))];
+  };
+  const targetMacros = input.targetMacros ?? {};
+  if (!targetMacros || typeof targetMacros !== 'object' || Array.isArray(targetMacros)) fail('targetMacros', 'targetMacros must be an object.');
+  for (const key of ['calories', 'protein', 'carbs', 'fat']) {
+    if (targetMacros[key] !== undefined && (typeof targetMacros[key] !== 'number' || !Number.isFinite(targetMacros[key]) || targetMacros[key] < 0 || targetMacros[key] > 10000)) {
+      fail(`targetMacros.${key}`, `${key} must be a number from 0 to 10000.`);
+    }
+  }
+  return {
+    ...validateNutritionFields(input), dateOfBirth: input.dateOfBirth,
+    allergies: stringList(input.allergies, 'allergies'),
+    dietaryPreferences: stringList(input.dietaryPreferences, 'dietaryPreferences'),
+    targetMacros
+  };
 }
 
 export function validateCalculation(body) {

@@ -10,6 +10,11 @@ router.use(requireAuth);
 const MEAL_SLOTS = new Set(['breakfast', 'lunch', 'dinner', 'snack', 'pre_workout', 'post_workout']);
 const datePattern = /^\d{4}-\d{2}-\d{2}$/;
 
+function isoDate(value) {
+  if (!(value instanceof Date)) return String(value).slice(0, 10);
+  return `${value.getFullYear()}-${String(value.getMonth() + 1).padStart(2, '0')}-${String(value.getDate()).padStart(2, '0')}`;
+}
+
 function validation(field, message) {
   throw new ApiError(422, message, 'VALIDATION_ERROR', { field });
 }
@@ -52,7 +57,7 @@ router.put('/meal-targets/:targetDate/:mealSlot', async (req, res, next) => {
     const result = await pool.query(
       `INSERT INTO meal_targets (user_id, target_date, meal_slot, planned_kcal)
        VALUES ($1, $2, $3, $4)
-       ON CONFLICT (user_id, target_date, meal_slot) DO UPDATE SET planned_kcal = EXCLUDED.planned_kcal
+       ON CONFLICT (user_id, target_date, meal_slot) DO UPDATE SET planned_kcal = EXCLUDED.planned_kcal, updated_at = NOW()
        RETURNING id, target_date, meal_slot, planned_kcal, adjustment_kcal, effective_kcal, updated_at`,
       [req.auth.userId, targetDate, mealSlot, plannedKcal]
     );
@@ -165,7 +170,7 @@ router.post('/compensations', async (req, res, next) => {
     for (const allocation of calculation.allocations) {
       const updatedTarget = await client.query(
         `UPDATE meal_targets
-         SET adjustment_kcal = adjustment_kcal - $1
+         SET adjustment_kcal = adjustment_kcal - $1, updated_at = NOW()
          WHERE id = $2
          RETURNING id, target_date, meal_slot, planned_kcal, adjustment_kcal, effective_kcal, updated_at`,
         [allocation.compensationKcal, allocation.id]
@@ -190,7 +195,7 @@ router.post('/compensations', async (req, res, next) => {
 function serializeTarget(row) {
   return {
     id: row.id,
-    targetDate: row.target_date,
+    targetDate: isoDate(row.target_date),
     mealSlot: row.meal_slot,
     plannedKcal: Number(row.planned_kcal),
     adjustmentKcal: Number(row.adjustment_kcal),
@@ -202,7 +207,7 @@ function serializeTarget(row) {
 function serializeDeviation(row) {
   return {
     id: row.id,
-    occurredOn: row.occurred_on,
+    occurredOn: isoDate(row.occurred_on),
     targetKcal: Number(row.target_kcal),
     actualKcal: Number(row.actual_kcal),
     deltaKcal: Number(row.delta_kcal),

@@ -1,7 +1,75 @@
 import { Router } from 'express';
 import { pool } from '../db/pool.js';
+import { requireAuth } from '../middleware/auth.js';
+import { ApiError } from '../errors.js';
 
 const router = Router();
+
+router.get('/favorites/recipes', requireAuth, async (req, res, next) => {
+  try {
+    const result = await pool.query(
+      `SELECT r.id, r.title, r.icon, r.description, r.kcal, r.protein_g, r.carbs_g, r.fat_g, r.tags, f.created_at
+       FROM user_favorite_recipes f JOIN recipes r ON r.id = f.recipe_id
+       WHERE f.user_id = $1 ORDER BY f.created_at DESC`, [req.auth.userId]
+    );
+    res.json({ recipes: result.rows.map((row) => ({ id: row.id, title: row.title, icon: row.icon, description: row.description, kcal: Number(row.kcal), protein: Number(row.protein_g), carbs: Number(row.carbs_g), fat: Number(row.fat_g), tags: row.tags, savedAt: row.created_at })) });
+  } catch (error) { next(error); }
+});
+
+router.put('/favorites/recipes/:recipeId', requireAuth, async (req, res, next) => {
+  try {
+    const result = await pool.query(
+      `INSERT INTO user_favorite_recipes (user_id, recipe_id)
+       SELECT $1, id FROM recipes WHERE id = $2
+       ON CONFLICT DO NOTHING RETURNING recipe_id`, [req.auth.userId, req.params.recipeId]
+    );
+    if (!result.rowCount) {
+      const exists = await pool.query('SELECT 1 FROM recipes WHERE id = $1', [req.params.recipeId]);
+      if (!exists.rowCount) throw new ApiError(404, 'Recipe not found.', 'RECIPE_NOT_FOUND');
+    }
+    res.status(201).json({ saved: true, recipeId: req.params.recipeId });
+  } catch (error) { next(error); }
+});
+
+router.delete('/favorites/recipes/:recipeId', requireAuth, async (req, res, next) => {
+  try {
+    await pool.query('DELETE FROM user_favorite_recipes WHERE user_id = $1 AND recipe_id = $2', [req.auth.userId, req.params.recipeId]);
+    res.json({ saved: false, recipeId: req.params.recipeId });
+  } catch (error) { next(error); }
+});
+
+router.get('/favorites/ingredients', requireAuth, async (req, res, next) => {
+  try {
+    const result = await pool.query(
+      `SELECT i.id, i.name, i.category, i.kcal_per_100g, i.protein_g, i.carbs_g, i.fat_g, f.created_at
+       FROM user_favorite_ingredients f JOIN ingredients i ON i.id = f.ingredient_id
+       WHERE f.user_id = $1 ORDER BY f.created_at DESC`, [req.auth.userId]
+    );
+    res.json({ ingredients: result.rows.map((row) => ({ id: row.id, name: row.name, category: row.category, kcalPer100g: Number(row.kcal_per_100g), protein: Number(row.protein_g), carbs: Number(row.carbs_g), fat: Number(row.fat_g), savedAt: row.created_at })) });
+  } catch (error) { next(error); }
+});
+
+router.put('/favorites/ingredients/:ingredientId', requireAuth, async (req, res, next) => {
+  try {
+    const result = await pool.query(
+      `INSERT INTO user_favorite_ingredients (user_id, ingredient_id)
+       SELECT $1, id FROM ingredients WHERE id = $2
+       ON CONFLICT DO NOTHING RETURNING ingredient_id`, [req.auth.userId, req.params.ingredientId]
+    );
+    if (!result.rowCount) {
+      const exists = await pool.query('SELECT 1 FROM ingredients WHERE id = $1', [req.params.ingredientId]);
+      if (!exists.rowCount) throw new ApiError(404, 'Ingredient not found.', 'INGREDIENT_NOT_FOUND');
+    }
+    res.status(201).json({ saved: true, ingredientId: req.params.ingredientId });
+  } catch (error) { next(error); }
+});
+
+router.delete('/favorites/ingredients/:ingredientId', requireAuth, async (req, res, next) => {
+  try {
+    await pool.query('DELETE FROM user_favorite_ingredients WHERE user_id = $1 AND ingredient_id = $2', [req.auth.userId, req.params.ingredientId]);
+    res.json({ saved: false, ingredientId: req.params.ingredientId });
+  } catch (error) { next(error); }
+});
 
 // -------------------------------------------------------------
 // GET /api/ingredients - Lấy toàn bộ danh sách nguyên liệu
@@ -116,9 +184,26 @@ router.get('/recipes', async (req, res, next) => {
 // -------------------------------------------------------------
 // POST /api/recipes/suggest - Đề xuất món theo nguyên liệu sẵn có
 // -------------------------------------------------------------
-router.post('/recipes/suggest', async (req, res, next) => {
+router.post('/recipes/suggest', requireAuth, async (req, res, next) => {
   try {
     const { ingredients = [], maxTime } = req.body;
+    const profileResult = await pool.query(
+      'SELECT allergies, dietary_preferences FROM user_profiles WHERE user_id = $1', [req.auth.userId]
+    );
+    const suppliedAllergies = req.body?.allergies ?? [];
+    const suppliedPreferences = req.body?.dietaryPreferences ?? [];
+    if (!Array.isArray(suppliedAllergies) || suppliedAllergies.length > 30 || suppliedAllergies.some((value) => typeof value !== 'string' || !value.trim())) {
+      throw new ApiError(422, 'allergies must be an array of non-empty strings.', 'VALIDATION_ERROR', { field: 'allergies' });
+    }
+    if (!Array.isArray(suppliedPreferences) || suppliedPreferences.length > 30 || suppliedPreferences.some((value) => typeof value !== 'string' || !value.trim())) {
+      throw new ApiError(422, 'dietaryPreferences must be an array of non-empty strings.', 'VALIDATION_ERROR', { field: 'dietaryPreferences' });
+    }
+    const allergies = [...new Set([...(profileResult.rows[0]?.allergies || []), ...suppliedAllergies])];
+    const dietaryPreferences = [...new Set([...(profileResult.rows[0]?.dietary_preferences || []), ...suppliedPreferences])];
+    if (!Array.isArray(ingredients) || ingredients.some((value) => typeof value !== 'string' || !value.trim())) {
+      throw new ApiError(422, 'ingredients must be an array of non-empty strings.', 'VALIDATION_ERROR', { field: 'ingredients' });
+    }
+    const allergyPatterns = allergies.map((value) => `%${value.trim()}%`);
     const maxCookingTime = maxTime !== undefined ? Number(maxTime) : (req.query.maxTime ? Number(req.query.maxTime) : null);
 
     if (!Array.isArray(ingredients) || ingredients.length === 0) {
@@ -129,6 +214,16 @@ router.post('/recipes/suggest', async (req, res, next) => {
         WHERE 1=1
       `;
       const defaultParams = [];
+      let safetyFilter = '';
+      if (allergyPatterns.length) {
+        defaultParams.push(allergyPatterns);
+        safetyFilter = ` AND NOT EXISTS (SELECT 1 FROM recipe_ingredients ai WHERE ai.recipe_id = recipes.id AND ai.ingredient_name ILIKE ANY($${defaultParams.length}::text[]))`;
+      }
+      if (dietaryPreferences.length) {
+        defaultParams.push(dietaryPreferences.map((value) => value.trim()));
+        safetyFilter += ` AND tags && $${defaultParams.length}::text[]`;
+      }
+      defaultSql += safetyFilter;
       if (maxCookingTime && Number.isFinite(maxCookingTime)) {
         defaultParams.push(maxCookingTime);
         defaultSql += ` AND cooking_time_min <= $${defaultParams.length}`;
@@ -156,6 +251,15 @@ router.post('/recipes/suggest', async (req, res, next) => {
 
     const patterns = ingredients.map((name) => `%${name.trim()}%`);
     const params = [patterns];
+    let preferenceFilter = '';
+    if (allergyPatterns.length) {
+      params.push(allergyPatterns);
+      preferenceFilter += ` AND NOT EXISTS (SELECT 1 FROM recipe_ingredients ai WHERE ai.recipe_id = r.id AND ai.ingredient_name ILIKE ANY($${params.length}::text[]))`;
+    }
+    if (dietaryPreferences.length) {
+      params.push(dietaryPreferences.map((value) => value.trim()));
+      preferenceFilter += ` AND r.tags && $${params.length}::text[]`;
+    }
     let timeCondition = '';
     if (maxCookingTime && Number.isFinite(maxCookingTime)) {
       params.push(maxCookingTime);
@@ -171,6 +275,7 @@ router.post('/recipes/suggest', async (req, res, next) => {
       FROM recipes r
       JOIN recipe_ingredients ri ON r.id = ri.recipe_id
       WHERE (ri.ingredient_name ILIKE ANY($1::text[]) OR r.title ILIKE ANY($1::text[]))
+            ${preferenceFilter}
             ${timeCondition}
       GROUP BY r.id
       ORDER BY matching_count DESC, r.cooking_time_min ASC, r.kcal ASC

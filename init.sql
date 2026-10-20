@@ -18,6 +18,16 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
+-- Remove objects introduced by migrations 004/005 before their parent tables.
+DROP TABLE IF EXISTS public.calorie_compensation_allocations;
+DROP TABLE IF EXISTS public.calorie_compensations;
+DROP TABLE IF EXISTS public.calorie_deviations;
+DROP TABLE IF EXISTS public.meal_targets;
+DROP TABLE IF EXISTS public.body_stats_history;
+DROP TABLE IF EXISTS public.user_favorite_recipes;
+DROP TABLE IF EXISTS public.user_favorite_ingredients;
+DROP TABLE IF EXISTS public.meal_prep_batch_items;
+
 ALTER TABLE IF EXISTS ONLY public.user_profiles DROP CONSTRAINT IF EXISTS user_profiles_user_id_fkey;
 ALTER TABLE IF EXISTS ONLY public.user_inventory DROP CONSTRAINT IF EXISTS user_inventory_user_id_fkey;
 ALTER TABLE IF EXISTS ONLY public.user_badges DROP CONSTRAINT IF EXISTS user_badges_user_id_fkey;
@@ -19627,7 +19637,7 @@ e24a0127-be9b-4866-bec2-949334134a52	🌱 Món Chay: Đậu hũ chiên non phố
 --
 
 COPY public.schema_migrations (filename, checksum, applied_at) FROM stdin;
-001_initial_schema.sql	604c46ec9cbec6f50472c93f6b625e2dc908752054bc8885fcf7b60e719852ad	2026-10-09 18:46:01.406398+07
+001_initial_schema.sql	4212546f9d28a5b91c184743eeb46e53f28f616f19680f2f5982a334125bbcc2	2026-10-09 18:46:01.406398+07
 002_recipes_and_ingredients.sql	a9c9dc1d95a0e99d6834a6e3079e6bd9f3c6f57eabd9ced4176c6859cb516105	2026-10-09 19:26:09.086979+07
 003_cooking_streaks_and_badges.sql	b1cf5ba24cacde9cb53552390df6937f9e11b038358c2dd5eacf0c16e371bd04	2026-10-11 18:24:54.272294+07
 004_daily_health_metrics.sql	75f68d8b5adb39365bfc27a457c12a9c3d55a392337f1f69c40105badb19125e	2026-10-16 14:47:07.106863+07

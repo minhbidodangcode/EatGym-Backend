@@ -41,13 +41,14 @@ async def detect_food(
             detail=f"Unsupported image type: {file.content_type}. Use JPEG, PNG, or WebP.",
         )
 
-    # Read image bytes
-    image_bytes = await file.read()
+    request_start = time.perf_counter()
+    # Read at most one byte beyond the limit so oversized uploads do not fill memory.
+    max_size = 10 * 1024 * 1024
+    image_bytes = await file.read(max_size + 1)
     if len(image_bytes) == 0:
         raise HTTPException(status_code=400, detail="Empty file uploaded.")
 
     # Limit file size (10 MB)
-    max_size = 10 * 1024 * 1024
     if len(image_bytes) > max_size:
         raise HTTPException(
             status_code=413,
@@ -78,4 +79,5 @@ async def detect_food(
         "detections": detections,
         "count": len(detections),
         "inference_ms": round(elapsed_ms, 1),
+        "request_ms": round((time.perf_counter() - request_start) * 1000, 1),
     }

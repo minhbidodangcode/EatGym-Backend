@@ -23,6 +23,8 @@ services:
       retries: 10
     networks:
       - eatgym-net
+    ports:
+      - "5432:5432"
 
   # ---- API Server ----
   api:
