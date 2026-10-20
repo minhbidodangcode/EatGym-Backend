@@ -5,14 +5,161 @@ import { ApiError } from '../errors.js';
 
 const router = Router();
 
+// -------------------------------------------------------------
+// BẢNG ẢNH CHUẨN 100% CHO TẤT CẢ MÓN ĂN ĐÃ NẤU CHÍN TRONG DATABASE
+// -------------------------------------------------------------
+const STANDARD_RECIPE_IMAGES = {
+  // 1. Overnight oats yến mạch ngâm sữa chua hoa quả
+  overnight_oats: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=800',
+  // 2. Bữa phụ phục hồi sữa hạt & đĩa hạt dinh dưỡng
+  snack_plate: 'https://images.unsplash.com/photo-1508736793122-f516e3ba5569?w=800',
+  nut_milk_snack: 'https://images.unsplash.com/photo-1508736793122-f516e3ba5569?w=800',
+  nuts_superfood: 'https://images.unsplash.com/photo-1508736793122-f516e3ba5569?w=800',
+  // 3. Bánh mì đen kẹp trứng ốp & bơ
+  egg_toast: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800',
+  black_bread_egg: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800',
+  // 4. Bánh mì sandwich cá ngừ
+  tuna_sandwich: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=800',
+  // 5. Wrap ức gà ngũ cốc Tortilla
+  chicken_wrap: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=800',
+  // 6. Bún nưa / Mì gạo lứt Eat Clean
+  noodle_bowl: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800',
+  shirataki_bowl: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800',
+  // 7. Cháo yến mạch ức gà nấm
+  porridge: 'https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?w=800',
+  oatmeal_porridge: 'https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?w=800',
+  // 8. Đậu hũ áp chảo vàng giòn sốt tương gừng
+  tofu_meal: 'https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=800',
+  tofu_dish: 'https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=800',
+  tofu_rice_bowl: 'https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=800',
+  // 9. Đậu nành Edamame hấp đĩa
+  edamame_plate: 'https://images.unsplash.com/photo-1551462147-37885acc36f1?w=800',
+  edamame_beans: 'https://images.unsplash.com/photo-1551462147-37885acc36f1?w=800',
+  // 10. Bắp ngọt xào rau củ sốt tiêu đen Eat Clean
+  corn_stir_fry: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800',
+  sweet_corn: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800',
+  // 11. Bắp ngọt hấp kèm ức gà poke bowl
+  chicken_corn_meal: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800',
+  // 12. Bò bít tết thăn nạc măng tây
+  beef_steak: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800',
+  // 13. Bò xào ớt chuông cơm gạo lứt
+  beef_rice: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=800',
+  beef_stir_fry: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=800',
+  // 14. Cá hồi áp chảo sốt chanh leo
+  salmon_fillet: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800',
+  // 15. Cá ngừ áp chảo măng tây
+  tuna_steak: 'https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?w=800',
+  tuna_egg_salad: 'https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?w=800',
+  // 16. Tôm sú áp chảo bơ tỏi
+  garlic_shrimp: 'https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=800',
+  // 17. Ức gà áp chảo sốt bơ tỏi / tiêu đen
+  chicken_breast: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800',
+  // 18. Salad ức gà áp chảo sốt mè
+  chicken_salad: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800',
+  // 19. Đùi gà nướng thảo mộc
+  roast_chicken: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=800',
+  roast_chicken_thigh: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=800',
+  // 20. Thịt heo nạc rim mật ong cơm gạo lứt
+  pork_rice: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800',
+  pork_brown_rice: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800',
+  // 21. Trứng cuộn phô mai rau củ
+  egg_roll: 'https://images.unsplash.com/photo-1510693206972-df098062cb71?w=800',
+  // 22. Soup nóng / súp gà nấm
+  soup: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800',
+  chicken_soup: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800',
+  // 23. Canh rong biển bò băm đậu hũ
+  seaweed_soup: 'https://images.unsplash.com/photo-1607528971899-2e89e6c0ec69?w=800',
+  // 24. Sữa chua Hy Lạp việt quất Granola
+  yogurt_bowl: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800',
+  greek_yogurt_bowl: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800',
+  // 25. Sinh tố Protein chuối yến mạch
+  smoothie: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=800',
+  protein_smoothie: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=800',
+  // 26. Salad rau củ ngũ sắc Eat Clean
+  salad_bowl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800',
+  garden_salad: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800',
+  chickpea_salad: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800',
+  // 27. Ức gà xào súp lơ nấm
+  chicken_stir_fry: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800',
+};
+
+function resolveRecipeImage(title, description = '') {
+  const lower = (title + ' ' + description).toLowerCase();
+
+  // 1. Overnight oats & Sinh tố / Sữa chua / Granola
+  if (lower.includes('ngâm qua đêm') || lower.includes('overnight')) return STANDARD_RECIPE_IMAGES.overnight_oats;
+  if (lower.includes('sinh tố') || lower.includes('smoothie') || lower.includes('whey')) return STANDARD_RECIPE_IMAGES.smoothie;
+  if (lower.includes('sữa chua') || lower.includes('yogurt') || lower.includes('granola') || lower.includes('parfait')) return STANDARD_RECIPE_IMAGES.yogurt_bowl;
+  if (lower.includes('sữa hạt') || lower.includes('bữa phụ')) return STANDARD_RECIPE_IMAGES.snack_plate;
+
+  // 2. Wrap & Bánh mì / Sandwich / Toast
+  if (lower.includes('wrap') || lower.includes('bánh cuộn') || lower.includes('tortilla')) return STANDARD_RECIPE_IMAGES.chicken_wrap;
+  if (lower.includes('bánh mì') || lower.includes('sandwich') || lower.includes('toast')) {
+    if (lower.includes('cá ngừ') || lower.includes('tuna')) return STANDARD_RECIPE_IMAGES.tuna_sandwich;
+    return STANDARD_RECIPE_IMAGES.egg_toast;
+  }
+
+  // 3. Bún / Mì / Phở / Shirataki / Miến / Nui / Bánh canh
+  if (lower.includes('bún') || lower.includes('shirataki') || lower.includes('mì') || lower.includes('phở') || lower.includes('miến') || lower.includes('nui') || lower.includes('pasta') || lower.includes('bánh canh')) {
+    return STANDARD_RECIPE_IMAGES.noodle_bowl;
+  }
+
+  // 4. Cháo / Soup / Canh
+  if (lower.includes('cháo')) return STANDARD_RECIPE_IMAGES.porridge;
+  if (lower.includes('canh rong biển') || lower.includes('rong biển')) return STANDARD_RECIPE_IMAGES.seaweed_soup;
+  if (lower.includes('soup') || lower.includes('súp') || (lower.includes('canh') && !lower.includes('bánh'))) return STANDARD_RECIPE_IMAGES.soup;
+
+  // 5. Hải sản (Tôm, Cá hồi, Cá ngừ, Cua, Mực)
+  if (lower.includes('tôm') || lower.includes('shrimp') || lower.includes('cua') || lower.includes('mực') || lower.includes('hải sản')) return STANDARD_RECIPE_IMAGES.garlic_shrimp;
+  if (lower.includes('cá hồi') || lower.includes('salmon')) return STANDARD_RECIPE_IMAGES.salmon_fillet;
+  if (lower.includes('cá ngừ') || lower.includes('tuna')) return STANDARD_RECIPE_IMAGES.tuna_steak;
+
+  // 6. Trứng
+  if (lower.includes('trứng cuộn') || lower.includes('omlet') || lower.includes('omelette') || lower.includes('trứng ốp') || lower.includes('trứng')) return STANDARD_RECIPE_IMAGES.egg_roll;
+
+  // 7. Thịt bò
+  if (lower.includes('bít tết') || lower.includes('steak') || lower.includes('thăn bò')) return STANDARD_RECIPE_IMAGES.beef_steak;
+  if (lower.includes('bò xào') || lower.includes('bò băm') || lower.includes('bò') || lower.includes('thịt bò')) return STANDARD_RECIPE_IMAGES.beef_rice;
+
+  // 8. Thịt heo
+  if (lower.includes('thịt heo') || lower.includes('nạc heo') || lower.includes('heo rim') || lower.includes('thịt lợn') || lower.includes('thăn heo') || lower.includes('heo kho') || lower.includes('bao tử')) return STANDARD_RECIPE_IMAGES.pork_rice;
+
+  // 9. Đậu hũ / Món chay
+  if (lower.includes('đậu hũ') || lower.includes('đậu phụ') || lower.includes('tofu') || lower.includes('chao') || lower.includes('món chay')) return STANDARD_RECIPE_IMAGES.tofu_meal;
+
+  // 10. Thịt gà
+  if (lower.includes('đùi gà') || lower.includes('má đùi') || lower.includes('cánh gà') || lower.includes('gà nướng')) return STANDARD_RECIPE_IMAGES.roast_chicken;
+  if (lower.includes('ức gà') || lower.includes('gà')) {
+    if (lower.includes('salad') || lower.includes('xà lách')) return STANDARD_RECIPE_IMAGES.chicken_salad;
+    if (lower.includes('xào') || lower.includes('tiêu đen') || lower.includes('nấm')) return STANDARD_RECIPE_IMAGES.chicken_stir_fry;
+    if (lower.includes('bắp') || lower.includes('ngô') || lower.includes('hấp')) return STANDARD_RECIPE_IMAGES.chicken_corn_meal;
+    return STANDARD_RECIPE_IMAGES.chicken_breast;
+  }
+
+  // 11. Salad tươi trộn
+  if (lower.includes('salad') || lower.includes('trộn sốt') || lower.includes('giấm táo') || lower.includes('dầu ô liu')) return STANDARD_RECIPE_IMAGES.salad_bowl;
+
+  // 12. Bắp ngọt (Ngô) & Rau củ xào / hấp chín
+  if (lower.includes('bắp ngọt') || lower.includes('ngô')) {
+    if (lower.includes('xào') || lower.includes('áp chảo') || lower.includes('tiêu đen')) return STANDARD_RECIPE_IMAGES.corn_stir_fry;
+    return STANDARD_RECIPE_IMAGES.chicken_corn_meal;
+  }
+
+  // 13. Đậu nành Edamame & Các loại hạt dinh dưỡng
+  if (lower.includes('edamame') || lower.includes('đậu nành') || lower.includes('đậu hà lan')) return STANDARD_RECIPE_IMAGES.edamame_plate;
+  if (lower.includes('hạt') || lower.includes('quinoa') || lower.includes('hạnh nhân') || lower.includes('óc chó') || lower.includes('điều') || lower.includes('chia')) return STANDARD_RECIPE_IMAGES.snack_plate;
+
+  return STANDARD_RECIPE_IMAGES.chicken_breast;
+}
+
 router.get('/favorites/recipes', requireAuth, async (req, res, next) => {
   try {
     const result = await pool.query(
-      `SELECT r.id, r.title, r.icon, r.description, r.kcal, r.protein_g, r.carbs_g, r.fat_g, r.tags, f.created_at
+      `SELECT r.id, r.title, r.icon, r.description, r.kcal, r.protein_g, r.carbs_g, r.fat_g, r.tags, r.image_url, f.created_at
        FROM user_favorite_recipes f JOIN recipes r ON r.id = f.recipe_id
        WHERE f.user_id = $1 ORDER BY f.created_at DESC`, [req.auth.userId]
     );
-    res.json({ recipes: result.rows.map((row) => ({ id: row.id, title: row.title, icon: row.icon, description: row.description, kcal: Number(row.kcal), protein: Number(row.protein_g), carbs: Number(row.carbs_g), fat: Number(row.fat_g), tags: row.tags, savedAt: row.created_at })) });
+    res.json({ recipes: result.rows.map((row) => ({ id: row.id, title: row.title, icon: row.icon, image: row.image_url || resolveRecipeImage(row.title, row.description), image_url: row.image_url || resolveRecipeImage(row.title, row.description), description: row.description, kcal: Number(row.kcal), protein: Number(row.protein_g), carbs: Number(row.carbs_g), fat: Number(row.fat_g), tags: row.tags, savedAt: row.created_at })) });
   } catch (error) { next(error); }
 });
 
@@ -125,7 +272,7 @@ router.get('/recipes', async (req, res, next) => {
 
     let query = `
       SELECT r.id, r.title, r.icon, r.description, r.kcal, r.protein_g, r.carbs_g, r.fat_g,
-             r.cooking_time_min, r.servings, r.difficulty, r.tags, r.instructions,
+             r.image_url, r.cooking_time_min, r.servings, r.difficulty, r.tags, r.instructions,
              COALESCE(
                json_agg(
                  json_build_object(
@@ -163,6 +310,8 @@ router.get('/recipes', async (req, res, next) => {
         id: row.id,
         title: row.title,
         icon: row.icon || '🍲',
+        image: row.image_url || resolveRecipeImage(row.title, row.description),
+        image_url: row.image_url || resolveRecipeImage(row.title, row.description),
         description: row.description,
         kcal: Number(row.kcal),
         protein: Number(row.protein_g),
@@ -269,7 +418,7 @@ router.post('/recipes/suggest', requireAuth, async (req, res, next) => {
     const result = await pool.query(
       `
       SELECT r.id, r.title, r.icon, r.description, r.kcal, r.protein_g, r.carbs_g, r.fat_g,
-             r.cooking_time_min, r.tags, r.instructions,
+             r.image_url, r.cooking_time_min, r.tags, r.instructions,
              COUNT(ri.id) AS matching_count,
              ARRAY_AGG(ri.ingredient_name) AS matched_ingredients
       FROM recipes r
@@ -293,6 +442,8 @@ router.post('/recipes/suggest', requireAuth, async (req, res, next) => {
         id: row.id,
         title: row.title,
         icon: row.icon || '🍲',
+        image: row.image_url || resolveRecipeImage(row.title, row.description),
+        image_url: row.image_url || resolveRecipeImage(row.title, row.description),
         description: row.description,
         kcal: Number(row.kcal),
         protein: Number(row.protein_g),
