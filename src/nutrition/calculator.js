@@ -63,6 +63,15 @@ export function calculateTdee(bmr, activityLevel) {
 }
 
 export function calculateAge(dateOfBirth, asOf = new Date()) {
+  if (dateOfBirth instanceof Date) {
+    const year = dateOfBirth.getUTCFullYear();
+    const month = String(dateOfBirth.getUTCMonth() + 1).padStart(2, '0');
+    const day = String(dateOfBirth.getUTCDate()).padStart(2, '0');
+    dateOfBirth = `${year}-${month}-${day}`;
+  } else if (typeof dateOfBirth === 'string' && dateOfBirth.includes('T')) {
+    dateOfBirth = dateOfBirth.slice(0, 10);
+  }
+
   if (typeof dateOfBirth !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(dateOfBirth)) {
     invalid('dateOfBirth', 'dateOfBirth must use YYYY-MM-DD format.');
   }
