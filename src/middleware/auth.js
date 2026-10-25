@@ -58,3 +58,38 @@ export function requireRole(...allowedRoles) {
     next();
   };
 }
+
+
+export async function optionalAuth(req, _res, next) {
+  const authorization = req.get('authorization');
+  if (!authorization?.startsWith('Bearer ')) {
+    return next();
+  }
+
+  const token = authorization.slice('Bearer '.length).trim();
+  if (!token) {
+    return next();
+  }
+
+  try {
+    const payload = verifyAccessToken(token);
+    if (typeof payload.sub === 'string') {
+      const result = await pool.query(
+        `SELECT id, email, full_name, role, is_active, created_at
+         FROM users WHERE id = $1`,
+        [payload.sub]
+      );
+      const user = result.rows[0];
+      if (user && user.is_active) {
+        req.auth = {
+          userId: user.id,
+          email: user.email,
+          fullName: user.full_name,
+          role: user.role,
+          createdAt: user.created_at
+        };
+      }
+    }
+  } catch (_) {}
+  next();
+}

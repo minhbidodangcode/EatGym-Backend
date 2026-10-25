@@ -1,7 +1,15 @@
 import { Router } from 'express';
 import { pool } from '../db/pool.js';
-import { requireAuth } from '../middleware/auth.js';
+import { requireAuth, optionalAuth } from '../middleware/auth.js';
 import { ApiError } from '../errors.js';
+
+function hasDiacritics(str) {
+  return /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ]/.test(str);
+}
+
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
 
 const router = Router();
 
@@ -59,7 +67,7 @@ const STANDARD_RECIPE_IMAGES = {
   // 19. Đùi gà nướng thảo mộc
   roast_chicken: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=800',
   roast_chicken_thigh: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=800',
-  // 20. Thịt heo nạc rim mật ong cơm gạo lứt
+  // 20. Thịt lợn nạc rim mật ong cơm gạo lứt
   pork_rice: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800',
   pork_brown_rice: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800',
   // 21. Trứng cuộn phô mai rau củ
@@ -121,8 +129,8 @@ function resolveRecipeImage(title, description = '') {
   if (lower.includes('bít tết') || lower.includes('steak') || lower.includes('thăn bò')) return STANDARD_RECIPE_IMAGES.beef_steak;
   if (lower.includes('bò xào') || lower.includes('bò băm') || lower.includes('bò') || lower.includes('thịt bò')) return STANDARD_RECIPE_IMAGES.beef_rice;
 
-  // 8. Thịt heo
-  if (lower.includes('thịt heo') || lower.includes('nạc heo') || lower.includes('heo rim') || lower.includes('thịt lợn') || lower.includes('thăn heo') || lower.includes('heo kho') || lower.includes('bao tử')) return STANDARD_RECIPE_IMAGES.pork_rice;
+  // 8. Thịt lợn
+  if (lower.includes('thịt lợn') || lower.includes('nạc lợn') || lower.includes('lợn rim') || lower.includes('thịt lợn') || lower.includes('thăn lợn') || lower.includes('lợn kho') || lower.includes('bao tử')) return STANDARD_RECIPE_IMAGES.pork_rice;
 
   // 9. Đậu hũ / Món chay
   if (lower.includes('đậu hũ') || lower.includes('đậu phụ') || lower.includes('tofu') || lower.includes('chao') || lower.includes('món chay')) return STANDARD_RECIPE_IMAGES.tofu_meal;
@@ -237,8 +245,17 @@ router.get('/ingredients', async (req, res, next) => {
     }
 
     if (q && typeof q === 'string' && q.trim()) {
-      params.push(`%${q.trim()}%`);
-      query += ` AND name ILIKE $${params.length}`;
+      const tokens = q.trim().split(/\s+/).filter(Boolean);
+      for (const tok of tokens) {
+        const safeTok = escapeRegex(tok);
+        if (hasDiacritics(tok)) {
+          params.push(`(^|[^a-zA-Z0-9])${safeTok}`);
+          query += ` AND name ~* $${params.length}`;
+        } else {
+          params.push(`(^|[^a-zA-Z0-9])${safeTok}`);
+          query += ` AND unaccent(name) ~* unaccent($${params.length})`;
+        }
+      }
     }
 
     query += ' ORDER BY category, name ASC';
@@ -289,9 +306,18 @@ router.get('/recipes', async (req, res, next) => {
     `;
     const params = [];
 
-    if (search) {
-      params.push(`%${search}%`);
-      query += ` AND (r.title ILIKE $${params.length} OR ri.ingredient_name ILIKE $${params.length})`;
+    if (search && typeof search === 'string' && search.trim()) {
+      const tokens = search.trim().split(/\s+/).filter(Boolean);
+      for (const tok of tokens) {
+        const safeTok = escapeRegex(tok);
+        if (hasDiacritics(tok)) {
+          params.push(`(^|[^a-zA-Z0-9])${safeTok}`);
+          query += ` AND (r.title ~* $${params.length} OR ri.ingredient_name ~* $${params.length})`;
+        } else {
+          params.push(`(^|[^a-zA-Z0-9])${safeTok}`);
+          query += ` AND (unaccent(r.title) ~* unaccent($${params.length}) OR unaccent(ri.ingredient_name) ~* unaccent($${params.length}))`;
+        }
+      }
     }
 
     if (tag && tag !== 'Tất cả') {
@@ -331,14 +357,17 @@ router.get('/recipes', async (req, res, next) => {
 });
 
 // -------------------------------------------------------------
-// POST /api/recipes/suggest - Đề xuất món theo nguyên liệu sẵn có
+// POST /api/recipes/suggest - Đề xuất món tlợn nguyên liệu sẵn có
 // -------------------------------------------------------------
-router.post('/recipes/suggest', requireAuth, async (req, res, next) => {
+router.post('/recipes/suggest', optionalAuth, async (req, res, next) => {
   try {
     const { ingredients = [], maxTime } = req.body;
-    const profileResult = await pool.query(
-      'SELECT allergies, dietary_preferences FROM user_profiles WHERE user_id = $1', [req.auth.userId]
-    );
+    let profileResult = { rows: [] };
+    if (req.auth?.userId) {
+      profileResult = await pool.query(
+        'SELECT allergies, dietary_preferences FROM user_profiles WHERE user_id = $1', [req.auth.userId]
+      );
+    }
     const suppliedAllergies = req.body?.allergies ?? [];
     const suppliedPreferences = req.body?.dietaryPreferences ?? [];
     if (!Array.isArray(suppliedAllergies) || suppliedAllergies.length > 30 || suppliedAllergies.some((value) => typeof value !== 'string' || !value.trim())) {
