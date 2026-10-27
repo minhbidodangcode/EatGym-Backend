@@ -107,6 +107,31 @@ router.post('/deviations', async (req, res, next) => {
   }
 });
 
+router.get('/deviations', async (req, res, next) => {
+  try {
+    const result = await pool.query(
+      `SELECT d.id, d.occurred_on, d.target_kcal, d.actual_kcal, d.delta_kcal, d.note, d.created_at,
+              c.id AS compensation_id, c.status AS compensation_status, c.allocated_kcal, c.horizon_days
+       FROM calorie_deviations d
+       LEFT JOIN calorie_compensations c ON c.deviation_id = d.id
+       WHERE d.user_id = $1
+       ORDER BY d.occurred_on DESC, d.created_at DESC`,
+      [req.auth.userId]
+    );
+    res.json({
+      deviations: result.rows.map((row) => ({
+        ...serializeDeviation(row),
+        isCompensated: Boolean(row.compensation_id),
+        compensationStatus: row.compensation_status || null,
+        allocatedKcal: row.allocated_kcal ? Number(row.allocated_kcal) : 0,
+        horizonDays: row.horizon_days || null,
+      }))
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.post('/compensations', async (req, res, next) => {
   const client = await pool.connect();
   try {

@@ -128,6 +128,18 @@ router.post('/inventory/:id/consume', async (req, res, next) => {
 });
 
 // -------------------------------------------------------------
+// DELETE /api/inventory - Xóa toàn bộ kho nguyên liệu của user
+// -------------------------------------------------------------
+router.delete('/inventory', async (req, res, next) => {
+  try {
+    await pool.query('DELETE FROM user_inventory WHERE user_id = $1', [req.auth.userId]);
+    res.json({ message: 'Đã dọn sạch toàn bộ kho nguyên liệu.' });
+  } catch (error) {
+    next(error);
+  }
+});
+
+// -------------------------------------------------------------
 // DELETE /api/inventory/:id - Xóa nguyên liệu khỏi kho
 // -------------------------------------------------------------
 router.delete('/inventory/:id', async (req, res, next) => {

@@ -173,6 +173,35 @@ router.post('/batches', async (req, res, next) => {
   }
 });
 
+router.get('/batches', async (req, res, next) => {
+  try {
+    const batchesResult = await pool.query(
+      `SELECT b.id, b.name, b.servings, b.notes, b.created_at, b.updated_at,
+              COALESCE(COUNT(i.id), 0)::int AS item_count
+       FROM meal_prep_batches b
+       LEFT JOIN meal_prep_batch_items i ON i.batch_id = b.id
+       WHERE b.user_id = $1
+       GROUP BY b.id
+       ORDER BY b.created_at DESC`,
+      [req.auth.userId]
+    );
+
+    res.json({
+      batches: batchesResult.rows.map((row) => ({
+        id: row.id,
+        name: row.name,
+        servings: Number(row.servings),
+        notes: row.notes,
+        itemCount: Number(row.item_count),
+        createdAt: row.created_at,
+        updatedAt: row.updated_at
+      }))
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get('/batches/:batchId', async (req, res, next) => {
   try {
     const batchResult = await pool.query(
