@@ -1,0 +1,4 @@
+{
+  "nodejs-testing.include": ["test/**/*.test.js"],
+  "nodejs-testing.exclude": ["**/node_modules/**"]
+}

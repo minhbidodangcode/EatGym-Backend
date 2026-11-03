@@ -1,0 +1,4898 @@
+[
+  {
+    "recipeId": "35745b93-bdfc-49fa-93e5-200ff87913df",
+    "title": "🌱 Chao (đậu hũ nhũ)",
+    "cleanTitle": "Chao (đậu hũ nhũ)",
+    "target": {
+      "kcal": 116,
+      "p": 8,
+      "c": 5,
+      "f": 8
+    },
+    "calculated": {
+      "p": 8.5,
+      "c": 4.1,
+      "f": 7.8,
+      "kcal": 110.6
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d3586a1-c4c5-45ba-ae97-e8dff7063cff",
+        "ingredient_name": "Đậu hũ trắng mềm",
+        "amount": 98,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "f5484976-2f0f-49ef-9044-fa3b0e438dc9",
+        "ingredient_name": "Dầu mè thơm",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "03da621b-3a41-4518-b357-9ed553965fcb",
+    "title": "🌱 Đậu hủ chiên xả",
+    "cleanTitle": "Đậu hủ chiên xả",
+    "target": {
+      "kcal": 148.2,
+      "p": 11.6,
+      "c": 0.7,
+      "f": 11
+    },
+    "calculated": {
+      "p": 7.9,
+      "c": 4.5,
+      "f": 11.5,
+      "kcal": 150.1
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "0b365547-de67-4a41-aba2-cc002a923bef",
+        "ingredient_name": "Đậu hũ chiên non",
+        "amount": 64,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "838ca788-89f7-4726-9d55-28c373d08455",
+        "ingredient_name": "Sả băm",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "94247b3a-c1d6-4199-95ef-82129df91150",
+    "title": "🌱 Đậu hủ sốt cà",
+    "cleanTitle": "Đậu hủ sốt cà",
+    "target": {
+      "kcal": 238.8,
+      "p": 18.1,
+      "c": 11,
+      "f": 13.6
+    },
+    "calculated": {
+      "p": 14.6,
+      "c": 11.3,
+      "f": 15.8,
+      "kcal": 239.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "0b365547-de67-4a41-aba2-cc002a923bef",
+        "ingredient_name": "Đậu hũ chiên non",
+        "amount": 105,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "fc022b46-983c-41b7-b86b-fb03e0bdaa1a",
+        "ingredient_name": "Cà chua chín",
+        "amount": 143,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "04675bc7-6b0e-4afa-9f94-57be0de349e8",
+    "title": "🍄 Nấm rơm kho",
+    "cleanTitle": "Nấm rơm kho",
+    "target": {
+      "kcal": 153.7,
+      "p": 7.5,
+      "c": 7.3,
+      "f": 10.5
+    },
+    "calculated": {
+      "p": 7.5,
+      "c": 7.3,
+      "f": 10.8,
+      "kcal": 153.6
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "19a3eb8b-5873-4330-90d8-97ec570f6dbf",
+        "ingredient_name": "Nấm rơm tươi",
+        "amount": 145,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 10,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "8449acd1-3f63-4ac0-8cd4-2b6bc39b70a6",
+        "ingredient_name": "Nước tương đậu nành (Xì dầu)",
+        "amount": 30,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "eefbbdad-5d66-4ee8-903f-4b1e3d54c92f",
+        "ingredient_name": "Hành tím băm",
+        "amount": 6,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "e87f1b3e-1f68-40ac-a7d8-22a552492629",
+    "title": "🍖 ️ Cà chua dồn thịt",
+    "cleanTitle": "️ Cà chua dồn thịt",
+    "target": {
+      "kcal": 130.8,
+      "p": 7.3,
+      "c": 9.2,
+      "f": 7.2
+    },
+    "calculated": {
+      "p": 10,
+      "c": 7.6,
+      "f": 6.5,
+      "kcal": 124.3
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "fc022b46-983c-41b7-b86b-fb03e0bdaa1a",
+        "ingredient_name": "Cà chua chín",
+        "amount": 150,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "ea1af6cc-bae2-4309-a36a-fbf35da500cb",
+        "ingredient_name": "Thịt heo nạc băm",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 18,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "84fb505f-5e88-4fe5-a490-9f6a8bde7cf8",
+    "title": "🍖 Bánh canh giò heo",
+    "cleanTitle": "Bánh canh giò heo",
+    "target": {
+      "kcal": 482.8,
+      "p": 19,
+      "c": 48.6,
+      "f": 23.6
+    },
+    "calculated": {
+      "p": 19,
+      "c": 48.6,
+      "f": 24,
+      "kcal": 483.6
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 153,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "82daa016-481d-4fa5-8d8b-4160ff3e6d11",
+        "ingredient_name": "Giòheo bỏ xương",
+        "amount": 88,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 16,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 7,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "b98e3ae6-8ecf-4aa2-aac6-8ed147a080f3",
+    "title": "🍖 Bánh canh thịt heo",
+    "cleanTitle": "Bánh canh thịt heo",
+    "target": {
+      "kcal": 321.7,
+      "p": 12.8,
+      "c": 48.5,
+      "f": 8.5
+    },
+    "calculated": {
+      "p": 14.3,
+      "c": 45.4,
+      "f": 9.1,
+      "kcal": 318.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 143,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "d647fae1-2df4-4952-b9cc-2d8b616cb295",
+    "title": "🍖 Chả giò chiên",
+    "cleanTitle": "Chả giò chiên",
+    "target": {
+      "kcal": 40.5,
+      "p": 1.8,
+      "c": 3.6,
+      "f": 2.1
+    },
+    "calculated": {
+      "p": 2.5,
+      "c": 8.4,
+      "f": 2.8,
+      "kcal": 68.5
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "c7ecdb5d-5385-4744-93ed-eee8e201a9c0",
+        "ingredient_name": "Bánh tráng mỏng",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "ea1af6cc-bae2-4309-a36a-fbf35da500cb",
+        "ingredient_name": "Thịt heo nạc băm",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4f93a8ed-31f3-4e29-b3cc-97dfe2b39dad",
+        "ingredient_name": "Cà rốt tươi",
+        "amount": 5,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "901b004e-5031-4960-9d83-45486615f79a",
+    "title": "🍖 Cháo sườn",
+    "cleanTitle": "Cháo sườn",
+    "target": {
+      "kcal": 328,
+      "p": 12.9,
+      "c": 50.7,
+      "f": 6.9
+    },
+    "calculated": {
+      "p": 12.2,
+      "c": 50.3,
+      "f": 8.6,
+      "kcal": 334.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 175,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "84f92239-fe86-4ffa-bd78-a246974e6807",
+        "ingredient_name": "Sườn non heo nạc",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 18,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "e084a666-ffc2-4a9e-af1d-ee5df5af16d8",
+    "title": "🍖 Cơm tấm sườn",
+    "cleanTitle": "Cơm tấm sườn",
+    "target": {
+      "kcal": 528.9,
+      "p": 20.7,
+      "c": 81.6,
+      "f": 13.3
+    },
+    "calculated": {
+      "p": 19.9,
+      "c": 82.4,
+      "f": 13.7,
+      "kcal": 544.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 284,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "84f92239-fe86-4ffa-bd78-a246974e6807",
+        "ingredient_name": "Sườn non heo nạc",
+        "amount": 65,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "d73bb61a-2d53-47bc-997c-1464e7d70e52",
+        "ingredient_name": "Dưa leo (Dưa chuột)",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "90c84b24-d23e-4fde-87f2-9a7c4c731a85",
+    "title": "🍖 Đậu hủ dồn thịt",
+    "cleanTitle": "Đậu hủ dồn thịt",
+    "target": {
+      "kcal": 196.3,
+      "p": 9.1,
+      "c": 7.8,
+      "f": 14.3
+    },
+    "calculated": {
+      "p": 13,
+      "c": 4.9,
+      "f": 14.6,
+      "kcal": 199.4
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "0b365547-de67-4a41-aba2-cc002a923bef",
+        "ingredient_name": "Đậu hũ chiên non",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "ea1af6cc-bae2-4309-a36a-fbf35da500cb",
+        "ingredient_name": "Thịt heo nạc băm",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "fc022b46-983c-41b7-b86b-fb03e0bdaa1a",
+        "ingredient_name": "Cà chua chín",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 7,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "4c802dbc-0f37-4963-b019-ad71f537efe9",
+    "title": "🍖 Giò cháo quẩy",
+    "cleanTitle": "Giò cháo quẩy",
+    "target": {
+      "kcal": 116.7,
+      "p": 3.2,
+      "c": 16.3,
+      "f": 4.3
+    },
+    "calculated": {
+      "p": 3.2,
+      "c": 24,
+      "f": 3.8,
+      "kcal": 144.5
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ffb91ea0-8725-4b52-945e-de9b72d13f96",
+        "ingredient_name": "Bánh mì baguette giòn",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "1bd985a8-e72f-4bad-8bd3-97ecb5bb9183",
+    "title": "🍖 Hủ tíu giò heo",
+    "cleanTitle": "Hủ tíu giò heo",
+    "target": {
+      "kcal": 637,
+      "p": 29,
+      "c": 55.9,
+      "f": 33
+    },
+    "calculated": {
+      "p": 29,
+      "c": 55.8,
+      "f": 33.4,
+      "kcal": 637.4
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 178,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "82daa016-481d-4fa5-8d8b-4160ff3e6d11",
+        "ingredient_name": "Giòheo bỏ xương",
+        "amount": 143,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "128c37f8-6381-4f07-9742-864d4e2ea94f",
+        "ingredient_name": "Giá đỗ xanh",
+        "amount": 21,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 6,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "75f9ca9f-3e25-4cca-8a3d-e0948db82b7b",
+    "title": "🍖 Hủ tíu thịt heo",
+    "cleanTitle": "Hủ tíu thịt heo",
+    "target": {
+      "kcal": 361.3,
+      "p": 14.4,
+      "c": 47.8,
+      "f": 12.5
+    },
+    "calculated": {
+      "p": 15.1,
+      "c": 46.8,
+      "f": 13.2,
+      "kcal": 363.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 149,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "128c37f8-6381-4f07-9742-864d4e2ea94f",
+        "ingredient_name": "Giá đỗ xanh",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 9,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "1d272382-645b-48be-bcac-ce161f6d1a15",
+    "title": "🍖 Mì thịt heo",
+    "cleanTitle": "Mì thịt heo",
+    "target": {
+      "kcal": 415.4,
+      "p": 19,
+      "c": 66.4,
+      "f": 8.2
+    },
+    "calculated": {
+      "p": 22.1,
+      "c": 56.8,
+      "f": 8.4,
+      "kcal": 390.3
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "1a79a9ee-5690-4010-83a3-9e7fd84b316c",
+        "ingredient_name": "Mì Ý nguyên cám Spaghetti",
+        "amount": 79,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c4d7b135-43be-40df-be73-6052ef2da1ab",
+        "ingredient_name": "Cải thìa (Bok choy)",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "ee53bc0e-071c-4a51-9c51-2e0b69cb8708",
+    "title": "🍖 Mì xào giòn",
+    "cleanTitle": "Mì xào giòn",
+    "target": {
+      "kcal": 638.9,
+      "p": 42.2,
+      "c": 51.6,
+      "f": 29.3
+    },
+    "calculated": {
+      "p": 42.3,
+      "c": 51.9,
+      "f": 29.4,
+      "kcal": 638.5
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "1a79a9ee-5690-4010-83a3-9e7fd84b316c",
+        "ingredient_name": "Mì Ý nguyên cám Spaghetti",
+        "amount": 73,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 117,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3eb81c14-ff93-4143-bc2e-772c2a2c7b25",
+        "ingredient_name": "Tôm sú bóc vỏ",
+        "amount": 44,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 20,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "3542f808-0b34-4fa0-beb1-88b584c5bd5d",
+    "title": "🍖 Nui thịt heo",
+    "cleanTitle": "Nui thịt heo",
+    "target": {
+      "kcal": 399.3,
+      "p": 17.5,
+      "c": 61.4,
+      "f": 9.3
+    },
+    "calculated": {
+      "p": 20.4,
+      "c": 52.2,
+      "f": 9.3,
+      "kcal": 370.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "1a79a9ee-5690-4010-83a3-9e7fd84b316c",
+        "ingredient_name": "Mì Ý nguyên cám Spaghetti",
+        "amount": 65,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4f93a8ed-31f3-4e29-b3cc-97dfe2b39dad",
+        "ingredient_name": "Cà rốt tươi",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 4,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "9e69c397-57b2-4b48-b54b-129fbf254857",
+    "title": "🍖 Sườn nướng",
+    "cleanTitle": "Sườn nướng",
+    "target": {
+      "kcal": 123.6,
+      "p": 10.6,
+      "c": 4.1,
+      "f": 7.2
+    },
+    "calculated": {
+      "p": 10.4,
+      "c": 4,
+      "f": 9.6,
+      "kcal": 143.3
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "84f92239-fe86-4ffa-bd78-a246974e6807",
+        "ingredient_name": "Sườn non heo nạc",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "a1e510a6-ed1f-495e-baef-0a5dfe6f61d1",
+        "ingredient_name": "Nước mắm cá cơm truyền thống",
+        "amount": 6,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4430063d-47c8-41ae-80f0-284990e709ca",
+        "ingredient_name": "Tỏi băm tươi",
+        "amount": 12,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "18e8419a-f5be-40ff-93ea-1aecbd27ed5f",
+    "title": "🍖 Sườn ram",
+    "cleanTitle": "Sườn ram",
+    "target": {
+      "kcal": 155.7,
+      "p": 10.9,
+      "c": 2.6,
+      "f": 11.3
+    },
+    "calculated": {
+      "p": 10.9,
+      "c": 2.7,
+      "f": 11.3,
+      "kcal": 156.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "84f92239-fe86-4ffa-bd78-a246974e6807",
+        "ingredient_name": "Sườn non heo nạc",
+        "amount": 55,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "a1e510a6-ed1f-495e-baef-0a5dfe6f61d1",
+        "ingredient_name": "Nước mắm cá cơm truyền thống",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4430063d-47c8-41ae-80f0-284990e709ca",
+        "ingredient_name": "Tỏi băm tươi",
+        "amount": 8,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "4f1f6fa9-0f1e-44cf-8af0-1a7310c012dd",
+    "title": "🍖 Thịt heo phá lấu",
+    "cleanTitle": "Thịt heo phá lấu",
+    "target": {
+      "kcal": 241.1,
+      "p": 13.9,
+      "c": 1.6,
+      "f": 19.9
+    },
+    "calculated": {
+      "p": 15.2,
+      "c": 1.7,
+      "f": 19.3,
+      "kcal": 237.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "3cbbf592-3318-419b-8122-8bd186c1cc50",
+        "ingredient_name": "Bao tử heo",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 15,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "eefbbdad-5d66-4ee8-903f-4b1e3d54c92f",
+        "ingredient_name": "Hành tím băm",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "aace43e7-97fe-43fe-b22c-74f7b0a0e5f3",
+    "title": "🍖 Thịt heo quay",
+    "cleanTitle": "Thịt heo quay",
+    "target": {
+      "kcal": 249.7,
+      "p": 7,
+      "c": 23.7,
+      "f": 14.1
+    },
+    "calculated": {
+      "p": 10.8,
+      "c": 3.2,
+      "f": 13,
+      "kcal": 170.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "560c8270-3ea9-40ac-a6ca-28189f6d0185",
+        "ingredient_name": "Thịt ba chỉ heo",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "d73bb61a-2d53-47bc-997c-1464e7d70e52",
+        "ingredient_name": "Dưa leo (Dưa chuột)",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "8449acd1-3f63-4ac0-8cd4-2b6bc39b70a6",
+        "ingredient_name": "Nước tương đậu nành (Xì dầu)",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "29ae1b66-a59e-4246-a3fe-b3d238ae8744",
+    "title": "🍖 Thịt heo xào đậu que",
+    "cleanTitle": "Thịt heo xào đậu que",
+    "target": {
+      "kcal": 240.2,
+      "p": 20.5,
+      "c": 16.6,
+      "f": 10.2
+    },
+    "calculated": {
+      "p": 20.6,
+      "c": 15.5,
+      "f": 10.6,
+      "kcal": 227.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 89,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "0c962510-d229-473c-a5b8-f585bcb2384c",
+        "ingredient_name": "Đậu cove (Đậu que)",
+        "amount": 150,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 4,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4430063d-47c8-41ae-80f0-284990e709ca",
+        "ingredient_name": "Tỏi băm tươi",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "b52542d4-838c-4327-be71-49063a81d151",
+    "title": "🍖 Thịt heo xào giá hẹ",
+    "cleanTitle": "Thịt heo xào giá hẹ",
+    "target": {
+      "kcal": 188.2,
+      "p": 19.3,
+      "c": 4.8,
+      "f": 10.2
+    },
+    "calculated": {
+      "p": 19.2,
+      "c": 4.8,
+      "f": 10.1,
+      "kcal": 182.3
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "128c37f8-6381-4f07-9742-864d4e2ea94f",
+        "ingredient_name": "Giá đỗ xanh",
+        "amount": 87,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 4,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "61c59e5d-837f-40ef-9207-765f06ff26b1",
+    "title": "🍖 Thịt kho tiêu",
+    "cleanTitle": "Thịt kho tiêu",
+    "target": {
+      "kcal": 312,
+      "p": 22.5,
+      "c": 19.5,
+      "f": 16
+    },
+    "calculated": {
+      "p": 22.9,
+      "c": 3.7,
+      "f": 16.2,
+      "kcal": 249.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 102,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "a1e510a6-ed1f-495e-baef-0a5dfe6f61d1",
+        "ingredient_name": "Nước mắm cá cơm truyền thống",
+        "amount": 30,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 9,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "eefbbdad-5d66-4ee8-903f-4b1e3d54c92f",
+        "ingredient_name": "Hành tím băm",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "e98962f4-0ff1-4036-bdb1-5ca22067a5db",
+    "title": "🍗 Bánh canh thịt gà",
+    "cleanTitle": "Bánh canh thịt gà",
+    "target": {
+      "kcal": 345.1,
+      "p": 12.8,
+      "c": 48.5,
+      "f": 11.1
+    },
+    "calculated": {
+      "p": 17.2,
+      "c": 39.5,
+      "f": 11.4,
+      "kcal": 326.8
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 124,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "072cd286-b2ef-440b-893e-5fe7eba783c1",
+        "ingredient_name": "Ức gà không da",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 10,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "d9ea4225-5422-4110-9bc7-9a61cfb6c920",
+    "title": "🍗 Đùi gà chiên",
+    "cleanTitle": "Đùi gà chiên",
+    "target": {
+      "kcal": 173.1,
+      "p": 11,
+      "c": 4.6,
+      "f": 12.3
+    },
+    "calculated": {
+      "p": 15.2,
+      "c": 4.3,
+      "f": 12.2,
+      "kcal": 187.5
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ea224796-f41e-49fd-bdca-ed2782fa6aff",
+        "ingredient_name": "Đùi gà tháo xương",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 7,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4430063d-47c8-41ae-80f0-284990e709ca",
+        "ingredient_name": "Tỏi băm tươi",
+        "amount": 13,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "0192e577-e21b-4095-8afe-9c10c30af019",
+    "title": "🍗 Gà kho gừng",
+    "cleanTitle": "Gà kho gừng",
+    "target": {
+      "kcal": 300.7,
+      "p": 21.9,
+      "c": 10.3,
+      "f": 19.1
+    },
+    "calculated": {
+      "p": 22,
+      "c": 5.6,
+      "f": 19.1,
+      "kcal": 282.5
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ea224796-f41e-49fd-bdca-ed2782fa6aff",
+        "ingredient_name": "Đùi gà tháo xương",
+        "amount": 81,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "65a20d98-06a2-4c31-a88e-d25a2b2a7859",
+        "ingredient_name": "Gừng tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "a1e510a6-ed1f-495e-baef-0a5dfe6f61d1",
+        "ingredient_name": "Nước mắm cá cơm truyền thống",
+        "amount": 20,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 12,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "289a608e-4c76-4138-9590-d5751a168843",
+    "title": "🍗 Gà rô ti",
+    "cleanTitle": "Gà rô ti",
+    "target": {
+      "kcal": 300.3,
+      "p": 20.3,
+      "c": 2.8,
+      "f": 23.1
+    },
+    "calculated": {
+      "p": 20.4,
+      "c": 3,
+      "f": 22.9,
+      "kcal": 299.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ea224796-f41e-49fd-bdca-ed2782fa6aff",
+        "ingredient_name": "Đùi gà tháo xương",
+        "amount": 81,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4430063d-47c8-41ae-80f0-284990e709ca",
+        "ingredient_name": "Tỏi băm tươi",
+        "amount": 8,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 16,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "8449acd1-3f63-4ac0-8cd4-2b6bc39b70a6",
+        "ingredient_name": "Nước tương đậu nành (Xì dầu)",
+        "amount": 6,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "7ad5ba60-d34c-455b-ba0f-7ccd2c308b6c",
+    "title": "🍗 Gà xào sả ớt",
+    "cleanTitle": "Gà xào sả ớt",
+    "target": {
+      "kcal": 272.3,
+      "p": 20.4,
+      "c": 4.7,
+      "f": 19.1
+    },
+    "calculated": {
+      "p": 20.4,
+      "c": 4.8,
+      "f": 19.2,
+      "kcal": 272.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ea224796-f41e-49fd-bdca-ed2782fa6aff",
+        "ingredient_name": "Đùi gà tháo xương",
+        "amount": 83,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "838ca788-89f7-4726-9d55-28c373d08455",
+        "ingredient_name": "Sả băm",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 12,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "b4ed6f0c-4499-43b9-93c4-19a280105e39",
+        "ingredient_name": "Ớt tươi",
+        "amount": 11,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "4d9459a3-f4f0-4b00-b3dd-01b5785bd515",
+    "title": "🍗 Miến gà",
+    "cleanTitle": "Miến gà",
+    "target": {
+      "kcal": 634.9,
+      "p": 17.8,
+      "c": 100.2,
+      "f": 18.1
+    },
+    "calculated": {
+      "p": 26.3,
+      "c": 57.9,
+      "f": 18.3,
+      "kcal": 498.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "1a79a9ee-5690-4010-83a3-9e7fd84b316c",
+        "ingredient_name": "Mì Ý nguyên cám Spaghetti",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "072cd286-b2ef-440b-893e-5fe7eba783c1",
+        "ingredient_name": "Ức gà không da",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 16,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "e1cafa37-8242-49c3-a7e6-eec6a47e2776",
+    "title": "🍗 Phở gà",
+    "cleanTitle": "Phở gà",
+    "target": {
+      "kcal": 483.5,
+      "p": 21.3,
+      "c": 59.3,
+      "f": 17.9
+    },
+    "calculated": {
+      "p": 24.1,
+      "c": 56,
+      "f": 18,
+      "kcal": 478
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 177,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "072cd286-b2ef-440b-893e-5fe7eba783c1",
+        "ingredient_name": "Ức gà không da",
+        "amount": 70,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 16,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "54425b48-5d10-4ffa-8dfe-932c25220175",
+    "title": "🍙 Xôi bắp",
+    "cleanTitle": "Xôi bắp",
+    "target": {
+      "kcal": 312.7,
+      "p": 8.2,
+      "c": 51.3,
+      "f": 8.3
+    },
+    "calculated": {
+      "p": 7.7,
+      "c": 56.4,
+      "f": 7.9,
+      "kcal": 311.3
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "38e34e63-da55-4fad-8544-e7a6a13a6d4e",
+        "ingredient_name": "Gạo nếp cái",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "79ad046e-97f4-410e-b59a-8ea5fe7b5f2e",
+        "ingredient_name": "Bắp ngọt tươi (Ngô)",
+        "amount": 88,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 6,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "5ff2a98d-ae08-4547-981e-1a9e4a460037",
+    "title": "🍙 Xôi đậu đen",
+    "cleanTitle": "Xôi đậu đen",
+    "target": {
+      "kcal": 551.9,
+      "p": 17.4,
+      "c": 95.6,
+      "f": 11.1
+    },
+    "calculated": {
+      "p": 17.3,
+      "c": 95.8,
+      "f": 11.1,
+      "kcal": 549.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "38e34e63-da55-4fad-8544-e7a6a13a6d4e",
+        "ingredient_name": "Gạo nếp cái",
+        "amount": 103,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1d5068e-4bd2-4217-95aa-bacf38e1098e",
+        "ingredient_name": "Đậu đen (hạt)",
+        "amount": 35,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 9,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "acbc1458-dbf5-425b-aedc-c650cb909972",
+    "title": "🍙 Xôi gấc",
+    "cleanTitle": "Xôi gấc",
+    "target": {
+      "kcal": 582.2,
+      "p": 12.1,
+      "c": 102.4,
+      "f": 13.8
+    },
+    "calculated": {
+      "p": 13.5,
+      "c": 87.8,
+      "f": 13.8,
+      "kcal": 528.1
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "38e34e63-da55-4fad-8544-e7a6a13a6d4e",
+        "ingredient_name": "Gạo nếp cái",
+        "amount": 103,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3f5f6bf3-139e-4094-89df-e249422a1ab6",
+        "ingredient_name": "Đậu xanh tách vỏ",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 12,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "048e613e-1a2d-43ca-a3b4-f5b6cd2cd59e",
+    "title": "🍙 Xôi khúc",
+    "cleanTitle": "Xôi khúc",
+    "target": {
+      "kcal": 396.1,
+      "p": 10.4,
+      "c": 65,
+      "f": 10.5
+    },
+    "calculated": {
+      "p": 16,
+      "c": 60.9,
+      "f": 6.3,
+      "kcal": 365.8
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "38e34e63-da55-4fad-8544-e7a6a13a6d4e",
+        "ingredient_name": "Gạo nếp cái",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3f5f6bf3-139e-4094-89df-e249422a1ab6",
+        "ingredient_name": "Đậu xanh tách vỏ",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "560c8270-3ea9-40ac-a6ca-28189f6d0185",
+        "ingredient_name": "Thịt ba chỉ heo",
+        "amount": 23,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "0f09f59e-e892-429c-b14a-7e5a35a13f5b",
+    "title": "🍙 Xôi lá cẩm",
+    "cleanTitle": "Xôi lá cẩm",
+    "target": {
+      "kcal": 578.9,
+      "p": 15,
+      "c": 104.3,
+      "f": 11.3
+    },
+    "calculated": {
+      "p": 15.3,
+      "c": 102.7,
+      "f": 11.1,
+      "kcal": 570.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "38e34e63-da55-4fad-8544-e7a6a13a6d4e",
+        "ingredient_name": "Gạo nếp cái",
+        "amount": 123,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3f5f6bf3-139e-4094-89df-e249422a1ab6",
+        "ingredient_name": "Đậu xanh tách vỏ",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 9,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "82824a02-5a16-4075-b84f-62a3b0acff4c",
+    "title": "🍙 Xôi mặn",
+    "cleanTitle": "Xôi mặn",
+    "target": {
+      "kcal": 500.5,
+      "p": 17.9,
+      "c": 64.7,
+      "f": 18.9
+    },
+    "calculated": {
+      "p": 17.9,
+      "c": 64.5,
+      "f": 18.5,
+      "kcal": 494
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "38e34e63-da55-4fad-8544-e7a6a13a6d4e",
+        "ingredient_name": "Gạo nếp cái",
+        "amount": 86,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "cff7ebc0-cdd0-4670-a2f9-5644081fadcb",
+        "ingredient_name": "Trứng cút tươi",
+        "amount": 22,
+        "unit": "quả",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 12,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "0cac2481-98d3-466c-9b6d-434bf48453ec",
+    "title": "🍙 Xôi nếp than",
+    "cleanTitle": "Xôi nếp than",
+    "target": {
+      "kcal": 516.2,
+      "p": 13.5,
+      "c": 90.8,
+      "f": 11
+    },
+    "calculated": {
+      "p": 14.8,
+      "c": 83.3,
+      "f": 10.8,
+      "kcal": 489.4
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "38e34e63-da55-4fad-8544-e7a6a13a6d4e",
+        "ingredient_name": "Gạo nếp cái",
+        "amount": 90,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3f5f6bf3-139e-4094-89df-e249422a1ab6",
+        "ingredient_name": "Đậu xanh tách vỏ",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 9,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "eb5abc4b-ea43-49b2-bd00-a9247e21ec2a",
+    "title": "🍙 Xôi vị",
+    "cleanTitle": "Xôi vị",
+    "target": {
+      "kcal": 460.2,
+      "p": 11.6,
+      "c": 74.2,
+      "f": 13
+    },
+    "calculated": {
+      "p": 11,
+      "c": 78.7,
+      "f": 12.6,
+      "kcal": 468.8
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "38e34e63-da55-4fad-8544-e7a6a13a6d4e",
+        "ingredient_name": "Gạo nếp cái",
+        "amount": 103,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "e6659e4d-3e32-4b32-bc08-21afdac287a4",
+        "ingredient_name": "Cùi dừa non",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 10,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "78939f99-6bbd-414c-8555-9ca7600f0b70",
+    "title": "🍙 Xôi vò",
+    "cleanTitle": "Xôi vò",
+    "target": {
+      "kcal": 510.1,
+      "p": 14.8,
+      "c": 97.2,
+      "f": 6.9
+    },
+    "calculated": {
+      "p": 16.8,
+      "c": 85.7,
+      "f": 6.9,
+      "kcal": 473
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "38e34e63-da55-4fad-8544-e7a6a13a6d4e",
+        "ingredient_name": "Gạo nếp cái",
+        "amount": 86,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3f5f6bf3-139e-4094-89df-e249422a1ab6",
+        "ingredient_name": "Đậu xanh tách vỏ",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "8035bb83-0452-4cb6-a3e9-c617f46eb5d4",
+    "title": "🍚 Cơm chiên dương châu",
+    "cleanTitle": "Cơm chiên dương châu",
+    "target": {
+      "kcal": 532.1,
+      "p": 14.9,
+      "c": 92.7,
+      "f": 11.3
+    },
+    "calculated": {
+      "p": 17.5,
+      "c": 80,
+      "f": 10.8,
+      "kcal": 499
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 280,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "55533c92-b969-4a7b-b2fc-79398ffe5221",
+        "ingredient_name": "Trứng gà tươi",
+        "amount": 30,
+        "unit": "quả",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "0c962510-d229-473c-a5b8-f585bcb2384c",
+        "ingredient_name": "Đậu cove (Đậu que)",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "22d6d606-2c11-4b8c-9092-9ba556cdd4a8",
+    "title": "🍚 Cơm tấm bì",
+    "cleanTitle": "Cơm tấm bì",
+    "target": {
+      "kcal": 628.1,
+      "p": 26,
+      "c": 87.6,
+      "f": 19.3
+    },
+    "calculated": {
+      "p": 26,
+      "c": 84,
+      "f": 19.1,
+      "kcal": 624.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 300,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 63,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "560c8270-3ea9-40ac-a6ca-28189f6d0185",
+        "ingredient_name": "Thịt ba chỉ heo",
+        "amount": 36,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 6,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "150fe5fb-0319-4e64-b43c-27ffc9a3d990",
+    "title": "🍚 Cơm tấm chả",
+    "cleanTitle": "Cơm tấm chả",
+    "target": {
+      "kcal": 593.7,
+      "p": 17,
+      "c": 90.7,
+      "f": 18.1
+    },
+    "calculated": {
+      "p": 19.4,
+      "c": 81.7,
+      "f": 18.5,
+      "kcal": 582.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 291,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "55533c92-b969-4a7b-b2fc-79398ffe5221",
+        "ingredient_name": "Trứng gà tươi",
+        "amount": 30,
+        "unit": "quả",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 12,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "e6f64047-805a-4fa8-8fc7-8e5d0296aa27",
+    "title": "🍜 Bánh canh chay",
+    "cleanTitle": "Bánh canh chay",
+    "target": {
+      "kcal": 321,
+      "p": 50,
+      "c": 10,
+      "f": 9
+    },
+    "calculated": {
+      "p": 15.9,
+      "c": 25.2,
+      "f": 10.5,
+      "kcal": 257.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "0b365547-de67-4a41-aba2-cc002a923bef",
+        "ingredient_name": "Đậu hũ chiên non",
+        "amount": 100,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "19a3eb8b-5873-4330-90d8-97ec570f6dbf",
+        "ingredient_name": "Nấm rơm tươi",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4f93a8ed-31f3-4e29-b3cc-97dfe2b39dad",
+        "ingredient_name": "Cà rốt tươi",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "9a052dd9-a475-4701-ba82-08129b04670d",
+    "title": "🍜 Hủ tíu mì",
+    "cleanTitle": "Hủ tíu mì",
+    "target": {
+      "kcal": 410.5,
+      "p": 16.7,
+      "c": 56.9,
+      "f": 12.9
+    },
+    "calculated": {
+      "p": 18,
+      "c": 55,
+      "f": 12.5,
+      "kcal": 403.4
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 63,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "1a79a9ee-5690-4010-83a3-9e7fd84b316c",
+        "ingredient_name": "Mì Ý nguyên cám Spaghetti",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 8,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "747867b1-162b-4742-acb7-077cfb38965a",
+    "title": "🍜 Hủ tíu Nam vang",
+    "cleanTitle": "Hủ tíu Nam vang",
+    "target": {
+      "kcal": 400.4,
+      "p": 24.3,
+      "c": 42.5,
+      "f": 14.8
+    },
+    "calculated": {
+      "p": 24.4,
+      "c": 42.6,
+      "f": 14.6,
+      "kcal": 396.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 137,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3eb81c14-ff93-4143-bc2e-772c2a2c7b25",
+        "ingredient_name": "Tôm sú bóc vỏ",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 42,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 11,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "d052469e-a81d-4567-9ed2-4f941f46fe46",
+    "title": "🍜 Hủ tíu xào",
+    "cleanTitle": "Hủ tíu xào",
+    "target": {
+      "kcal": 646.3,
+      "p": 41.4,
+      "c": 62.8,
+      "f": 25.5
+    },
+    "calculated": {
+      "p": 41.6,
+      "c": 62.7,
+      "f": 25.2,
+      "kcal": 640.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 202,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 133,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3eb81c14-ff93-4143-bc2e-772c2a2c7b25",
+        "ingredient_name": "Tôm sú bóc vỏ",
+        "amount": 41,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 15,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "c7bddfff-453b-4d53-b2c6-f75719bf0e35",
+    "title": "🍜 Mì căn xào sả",
+    "cleanTitle": "Mì căn xào sả",
+    "target": {
+      "kcal": 298.6,
+      "p": 7.7,
+      "c": 53.9,
+      "f": 5.8
+    },
+    "calculated": {
+      "p": 7.9,
+      "c": 11.9,
+      "f": 9.2,
+      "kcal": 156.1
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "0b365547-de67-4a41-aba2-cc002a923bef",
+        "ingredient_name": "Đậu hũ chiên non",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "838ca788-89f7-4726-9d55-28c373d08455",
+        "ingredient_name": "Sả băm",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "262a4955-6fd5-47be-8378-2edfe62b8ca5",
+    "title": "🍜 Mì quảng",
+    "cleanTitle": "Mì quảng",
+    "target": {
+      "kcal": 541,
+      "p": 22.4,
+      "c": 67.4,
+      "f": 20.2
+    },
+    "calculated": {
+      "p": 23.5,
+      "c": 66.1,
+      "f": 20.4,
+      "kcal": 538.8
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 213,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3eb81c14-ff93-4143-bc2e-772c2a2c7b25",
+        "ingredient_name": "Tôm sú bóc vỏ",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "f5484976-2f0f-49ef-9044-fa3b0e438dc9",
+        "ingredient_name": "Dầu mè thơm",
+        "amount": 16,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "2d3e34b7-574e-4135-9d53-df4544dda331",
+    "title": "🍜 Mì vịt tiềm",
+    "cleanTitle": "Mì vịt tiềm",
+    "target": {
+      "kcal": 776.6,
+      "p": 32.9,
+      "c": 64.5,
+      "f": 43
+    },
+    "calculated": {
+      "p": 33.8,
+      "c": 47.6,
+      "f": 31.1,
+      "kcal": 604.3
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 150,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 150,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "b5b21449-1ef9-43bc-93c5-0173de76dfb1",
+        "ingredient_name": "Bắp cải trắng",
+        "amount": 100,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 20,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "26543c31-97b8-4ce3-aebb-11a417413451",
+    "title": "🍲 Canh bắp cải",
+    "cleanTitle": "Canh bắp cải",
+    "target": {
+      "kcal": 37.3,
+      "p": 1.8,
+      "c": 2.8,
+      "f": 2.1
+    },
+    "calculated": {
+      "p": 2.9,
+      "c": 4.1,
+      "f": 1.8,
+      "kcal": 40.3
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "b5b21449-1ef9-43bc-93c5-0173de76dfb1",
+        "ingredient_name": "Bắp cải trắng",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 1,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "50662dd0-8879-4173-9825-fc0ff0caa5ee",
+    "title": "🍲 Canh bầu",
+    "cleanTitle": "Canh bầu",
+    "target": {
+      "kcal": 29.7,
+      "p": 1.2,
+      "c": 1.5,
+      "f": 2.1
+    },
+    "calculated": {
+      "p": 9.5,
+      "c": 16.2,
+      "f": 6,
+      "kcal": 156.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "b5b21449-1ef9-43bc-93c5-0173de76dfb1",
+        "ingredient_name": "Bắp cải trắng",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "7871c2a0-d1ba-428c-8026-b28ec4a3eb30",
+    "title": "🍲 Canh bí đao",
+    "cleanTitle": "Canh bí đao",
+    "target": {
+      "kcal": 28.9,
+      "p": 1.2,
+      "c": 1.3,
+      "f": 2.1
+    },
+    "calculated": {
+      "p": 9.5,
+      "c": 16.2,
+      "f": 6,
+      "kcal": 156.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "b5b21449-1ef9-43bc-93c5-0173de76dfb1",
+        "ingredient_name": "Bắp cải trắng",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "61033ce0-d294-4b8f-b755-14c09531fb51",
+    "title": "🍲 Canh bí rợ",
+    "cleanTitle": "Canh bí rợ",
+    "target": {
+      "kcal": 42.1,
+      "p": 1.2,
+      "c": 4.6,
+      "f": 2.1
+    },
+    "calculated": {
+      "p": 2.6,
+      "c": 4.2,
+      "f": 2.8,
+      "kcal": 48.8
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "23ed21b1-b0a8-427e-ad92-4116fb3ca2db",
+        "ingredient_name": "Bí đỏ (Bí ngô)",
+        "amount": 54,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "8b2ac234-4881-476d-879f-cb2ed2a9eaeb",
+    "title": "🍲 Canh chua",
+    "cleanTitle": "Canh chua",
+    "target": {
+      "kcal": 29.1,
+      "p": 1.9,
+      "c": 2.9,
+      "f": 1.1
+    },
+    "calculated": {
+      "p": 8.9,
+      "c": 2.6,
+      "f": 3.3,
+      "kcal": 73.5
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "38abc9a2-00b5-4c9b-b137-327651c7996f",
+        "ingredient_name": "Cá lóc đồng (Cá quả)",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "fc022b46-983c-41b7-b86b-fb03e0bdaa1a",
+        "ingredient_name": "Cà chua chín",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "128c37f8-6381-4f07-9742-864d4e2ea94f",
+        "ingredient_name": "Giá đỗ xanh",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "5963eaf8-482f-4909-96a3-4b95d4f0e842",
+    "title": "🍲 Canh hẹ",
+    "cleanTitle": "Canh hẹ",
+    "target": {
+      "kcal": 33.3,
+      "p": 2.9,
+      "c": 0.7,
+      "f": 2.1
+    },
+    "calculated": {
+      "p": 9.5,
+      "c": 16.2,
+      "f": 6,
+      "kcal": 156.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "b5b21449-1ef9-43bc-93c5-0173de76dfb1",
+        "ingredient_name": "Bắp cải trắng",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "7d3ac3a5-19dd-4149-95aa-cd6437ef83fe",
+    "title": "🍲 Canh khổ qua hầm",
+    "cleanTitle": "Canh khổ qua hầm",
+    "target": {
+      "kcal": 87.2,
+      "p": 4.5,
+      "c": 8.3,
+      "f": 4
+    },
+    "calculated": {
+      "p": 9.5,
+      "c": 16.2,
+      "f": 6,
+      "kcal": 156.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "b5b21449-1ef9-43bc-93c5-0173de76dfb1",
+        "ingredient_name": "Bắp cải trắng",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "602fcbff-4aad-4ddf-8a0e-1359cde35ddc",
+    "title": "🍲 Canh khoai mỡ",
+    "cleanTitle": "Canh khoai mỡ",
+    "target": {
+      "kcal": 50.7,
+      "p": 1.5,
+      "c": 8.7,
+      "f": 1.1
+    },
+    "calculated": {
+      "p": 3.8,
+      "c": 12.7,
+      "f": 3.2,
+      "kcal": 93.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "35d91e3d-04ca-417a-82ab-1071d1830732",
+        "ingredient_name": "Khoai lang mật hấp",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "e5655eec-fa89-4575-8dd4-f68c6ee62915",
+    "title": "🍲 Canh kiểm",
+    "cleanTitle": "Canh kiểm",
+    "target": {
+      "kcal": 290.3,
+      "p": 5.4,
+      "c": 37.7,
+      "f": 13.1
+    },
+    "calculated": {
+      "p": 6.5,
+      "c": 33.1,
+      "f": 13,
+      "kcal": 270
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "23ed21b1-b0a8-427e-ad92-4116fb3ca2db",
+        "ingredient_name": "Bí đỏ (Bí ngô)",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "35d91e3d-04ca-417a-82ab-1071d1830732",
+        "ingredient_name": "Khoai lang mật hấp",
+        "amount": 112,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "39bdae83-b011-4cb4-99cb-ba2f3e15cb68",
+        "ingredient_name": "Đậu phộng",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "f5484976-2f0f-49ef-9044-fa3b0e438dc9",
+        "ingredient_name": "Dầu mè thơm",
+        "amount": 6,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "79510129-17c8-4ae6-a735-fee5bbb94486",
+    "title": "🍲 Canh mướp",
+    "cleanTitle": "Canh mướp",
+    "target": {
+      "kcal": 30.9,
+      "p": 1.4,
+      "c": 1.6,
+      "f": 2.1
+    },
+    "calculated": {
+      "p": 2.9,
+      "c": 2.2,
+      "f": 2.1,
+      "kcal": 38
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "86ba6bb9-ee7e-441b-950d-c7ed8cc564f5",
+        "ingredient_name": "Bí đao (Bí xanh)",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3eb81c14-ff93-4143-bc2e-772c2a2c7b25",
+        "ingredient_name": "Tôm sú bóc vỏ",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "3976bae2-9f3b-471d-bf3b-ce72d283675a",
+    "title": "🍲 Canh rau dền",
+    "cleanTitle": "Canh rau dền",
+    "target": {
+      "kcal": 22.9,
+      "p": 0.9,
+      "c": 0.1,
+      "f": 2.1
+    },
+    "calculated": {
+      "p": 3.3,
+      "c": 2.8,
+      "f": 1.9,
+      "kcal": 37.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "c584967b-9eee-4e80-bdf8-c66c1341fd9f",
+        "ingredient_name": "Rau dền đỏ",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 1,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "26cdb20b-c313-44ab-a2cf-05eab6860012",
+    "title": "🍳 Bầu xào trứng",
+    "cleanTitle": "Bầu xào trứng",
+    "target": {
+      "kcal": 108.5,
+      "p": 4,
+      "c": 4,
+      "f": 8.5
+    },
+    "calculated": {
+      "p": 3.9,
+      "c": 4,
+      "f": 8.3,
+      "kcal": 103.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "86ba6bb9-ee7e-441b-950d-c7ed8cc564f5",
+        "ingredient_name": "Bí đao (Bí xanh)",
+        "amount": 75,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "55533c92-b969-4a7b-b2fc-79398ffe5221",
+        "ingredient_name": "Trứng gà tươi",
+        "amount": 23,
+        "unit": "quả",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 6,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 28,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "908a8a24-afbd-459e-913c-a85c64e74472",
+    "title": "🍳 Chả trứng chưng",
+    "cleanTitle": "Chả trứng chưng",
+    "target": {
+      "kcal": 126.7,
+      "p": 10.8,
+      "c": 9.4,
+      "f": 5.1
+    },
+    "calculated": {
+      "p": 11.4,
+      "c": 3.6,
+      "f": 7.9,
+      "kcal": 131
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "55533c92-b969-4a7b-b2fc-79398ffe5221",
+        "ingredient_name": "Trứng gà tươi",
+        "amount": 40,
+        "unit": "quả",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "eefbbdad-5d66-4ee8-903f-4b1e3d54c92f",
+        "ingredient_name": "Hành tím băm",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "b5cc1224-58fd-4eb2-a0ed-b40a0a05a740",
+    "title": "🍳 Khổ qua xào trứng",
+    "cleanTitle": "Khổ qua xào trứng",
+    "target": {
+      "kcal": 113.3,
+      "p": 4.6,
+      "c": 4.6,
+      "f": 8.5
+    },
+    "calculated": {
+      "p": 4.5,
+      "c": 4.6,
+      "f": 8.7,
+      "kcal": 110.1
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "194c9a03-ff3a-4db9-91aa-c037894fd082",
+        "ingredient_name": "Mướp đắng (Khổ qua)",
+        "amount": 64,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "55533c92-b969-4a7b-b2fc-79398ffe5221",
+        "ingredient_name": "Trứng gà tươi",
+        "amount": 26,
+        "unit": "quả",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 6,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 28,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "11f2737a-c6fd-48b6-ac3f-753c093a1819",
+    "title": "🍽️ ️ Bông cải xào thập cẩm",
+    "cleanTitle": "️ ️ Bông cải xào thập cẩm",
+    "target": {
+      "kcal": 141.9,
+      "p": 6.7,
+      "c": 14.6,
+      "f": 6.3
+    },
+    "calculated": {
+      "p": 8.1,
+      "c": 12,
+      "f": 6.5,
+      "kcal": 130.3
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "9717ea07-777e-46d2-bc52-bb4ea5cb0f4e",
+        "ingredient_name": "Bông cải xanh (Broccoli)",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4f93a8ed-31f3-4e29-b3cc-97dfe2b39dad",
+        "ingredient_name": "Cà rốt tươi",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 4,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "34d1d41e-f65a-498b-8fc2-e491ea615cfd",
+    "title": "🍽️ ️ Cà ri",
+    "cleanTitle": "️ ️ Cà ri",
+    "target": {
+      "kcal": 277.8,
+      "p": 7.8,
+      "c": 36,
+      "f": 11.4
+    },
+    "calculated": {
+      "p": 7.8,
+      "c": 36,
+      "f": 11.9,
+      "kcal": 277
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "35d91e3d-04ca-417a-82ab-1071d1830732",
+        "ingredient_name": "Khoai lang mật hấp",
+        "amount": 121,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "0b365547-de67-4a41-aba2-cc002a923bef",
+        "ingredient_name": "Đậu hũ chiên non",
+        "amount": 45,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4f93a8ed-31f3-4e29-b3cc-97dfe2b39dad",
+        "ingredient_name": "Cà rốt tươi",
+        "amount": 56,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 7,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "cdf2d409-2c00-44ab-bc5f-61f9ce5ea761",
+    "title": "🍽️ ️ Chim cút chiên bơ",
+    "cleanTitle": "️ ️ Chim cút chiên bơ",
+    "target": {
+      "kcal": 203.7,
+      "p": 10.6,
+      "c": 2.3,
+      "f": 16.9
+    },
+    "calculated": {
+      "p": 16.2,
+      "c": 2,
+      "f": 16.5,
+      "kcal": 217.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "072cd286-b2ef-440b-893e-5fe7eba783c1",
+        "ingredient_name": "Ức gà không da",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3464bc5d-05a8-4284-92e8-b14777f24494",
+        "ingredient_name": "Bơ lạt tự nhiên",
+        "amount": 19,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4430063d-47c8-41ae-80f0-284990e709ca",
+        "ingredient_name": "Tỏi băm tươi",
+        "amount": 6,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "dce3e7d1-8a6b-414b-a190-cba6d1d0a4d0",
+    "title": "🍽️ ️ Há cảo",
+    "cleanTitle": "️ ️ Há cảo",
+    "target": {
+      "kcal": 363.4,
+      "p": 7.4,
+      "c": 56,
+      "f": 12.2
+    },
+    "calculated": {
+      "p": 12.8,
+      "c": 35.6,
+      "f": 12.6,
+      "kcal": 304.6
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "c7ecdb5d-5385-4744-93ed-eee8e201a9c0",
+        "ingredient_name": "Bánh tráng mỏng",
+        "amount": 45,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3eb81c14-ff93-4143-bc2e-772c2a2c7b25",
+        "ingredient_name": "Tôm sú bóc vỏ",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 11,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "d7407f97-2d6f-4106-b332-b5ff55f96d9c",
+    "title": "🍽️ ️ Hoành thánh",
+    "cleanTitle": "️ ️ Hoành thánh",
+    "target": {
+      "kcal": 242.6,
+      "p": 12.3,
+      "c": 31.7,
+      "f": 7.4
+    },
+    "calculated": {
+      "p": 14,
+      "c": 30.8,
+      "f": 6.9,
+      "kcal": 240.6
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "c7ecdb5d-5385-4744-93ed-eee8e201a9c0",
+        "ingredient_name": "Bánh tráng mỏng",
+        "amount": 39,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3eb81c14-ff93-4143-bc2e-772c2a2c7b25",
+        "ingredient_name": "Tôm sú bóc vỏ",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 4,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "c4eef83d-2f23-4bb0-a682-9813b15d3661",
+    "title": "🍽️ ️ Mắm chưng",
+    "cleanTitle": "️ ️ Mắm chưng",
+    "target": {
+      "kcal": 194.1,
+      "p": 13.3,
+      "c": 4.4,
+      "f": 13.7
+    },
+    "calculated": {
+      "p": 14.9,
+      "c": 0.2,
+      "f": 13.5,
+      "kcal": 181.6
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "55533c92-b969-4a7b-b2fc-79398ffe5221",
+        "ingredient_name": "Trứng gà tươi",
+        "amount": 30,
+        "unit": "quả",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "d6d8bc0e-88ba-4bb3-a184-7c0dca093522",
+        "ingredient_name": "Mắm tôm đặc",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 7,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "b4137919-3e05-4f0b-a2a7-071d4e57c271",
+    "title": "🍽️ ️ Mắm Thái",
+    "cleanTitle": "️ ️ Mắm Thái",
+    "target": {
+      "kcal": 166.6,
+      "p": 11.1,
+      "c": 13.9,
+      "f": 7.4
+    },
+    "calculated": {
+      "p": 11.5,
+      "c": 2.9,
+      "f": 7.7,
+      "kcal": 124.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "d6d8bc0e-88ba-4bb3-a184-7c0dca093522",
+        "ingredient_name": "Mắm tôm đặc",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "d73bb61a-2d53-47bc-997c-1464e7d70e52",
+        "ingredient_name": "Dưa leo (Dưa chuột)",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 4,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "26ce3722-ce6b-4f33-8883-29526b8f6379",
+    "title": "🍽️ ️ Măng kho thập cẩm",
+    "cleanTitle": "️ ️ Măng kho thập cẩm",
+    "target": {
+      "kcal": 141.4,
+      "p": 8.9,
+      "c": 12.5,
+      "f": 6.2
+    },
+    "calculated": {
+      "p": 9.9,
+      "c": 8.7,
+      "f": 7.4,
+      "kcal": 132
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "0b365547-de67-4a41-aba2-cc002a923bef",
+        "ingredient_name": "Đậu hũ chiên non",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "ab881ccf-17ee-497e-88df-603d571ca527",
+        "ingredient_name": "Măng tây tươi",
+        "amount": 150,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "19a3eb8b-5873-4330-90d8-97ec570f6dbf",
+        "ingredient_name": "Nấm rơm tươi",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "ca126054-6bcd-428c-85bb-cadcca28d590",
+    "title": "🍽️ ️ Mít kho",
+    "cleanTitle": "️ ️ Mít kho",
+    "target": {
+      "kcal": 99.8,
+      "p": 3.7,
+      "c": 10,
+      "f": 5
+    },
+    "calculated": {
+      "p": 5.8,
+      "c": 8.3,
+      "f": 7.1,
+      "kcal": 117.1
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "0b365547-de67-4a41-aba2-cc002a923bef",
+        "ingredient_name": "Đậu hũ chiên non",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4f93a8ed-31f3-4e29-b3cc-97dfe2b39dad",
+        "ingredient_name": "Cà rốt tươi",
+        "amount": 68,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "8449acd1-3f63-4ac0-8cd4-2b6bc39b70a6",
+        "ingredient_name": "Nước tương đậu nành (Xì dầu)",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "850a291f-8bf6-4c07-8f9f-06a132316778",
+    "title": "🍽️ ️ Nui chiên",
+    "cleanTitle": "️ ️ Nui chiên",
+    "target": {
+      "kcal": 523.5,
+      "p": 18.2,
+      "c": 58,
+      "f": 24.3
+    },
+    "calculated": {
+      "p": 18.2,
+      "c": 58.4,
+      "f": 24.7,
+      "kcal": 527.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "1a79a9ee-5690-4010-83a3-9e7fd84b316c",
+        "ingredient_name": "Mì Ý nguyên cám Spaghetti",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "55533c92-b969-4a7b-b2fc-79398ffe5221",
+        "ingredient_name": "Trứng gà tươi",
+        "amount": 58,
+        "unit": "quả",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 18,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 16,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "860c833e-07b0-40a4-82d3-5f42bfc0e217",
+    "title": "🍽️ ️ Tàu hủ ky chiên",
+    "cleanTitle": "️ ️ Tàu hủ ky chiên",
+    "target": {
+      "kcal": 306.6,
+      "p": 37.2,
+      "c": 4.8,
+      "f": 15.4
+    },
+    "calculated": {
+      "p": 17.5,
+      "c": 5.1,
+      "f": 19.4,
+      "kcal": 263.4
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "0b365547-de67-4a41-aba2-cc002a923bef",
+        "ingredient_name": "Đậu hũ chiên non",
+        "amount": 144,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "da66ee41-5903-4ea0-8991-39a96d3d3706",
+    "title": "🍽️ ️ Tép rang",
+    "cleanTitle": "️ ️ Tép rang",
+    "target": {
+      "kcal": 100.1,
+      "p": 5.6,
+      "c": 4.8,
+      "f": 6.5
+    },
+    "calculated": {
+      "p": 6.4,
+      "c": 3.4,
+      "f": 6.6,
+      "kcal": 96.4
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "34c59053-d0f4-4347-909b-0314ef538602",
+        "ingredient_name": "Tép gạo",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 6,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "eefbbdad-5d66-4ee8-903f-4b1e3d54c92f",
+        "ingredient_name": "Hành tím băm",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "f567af34-cebe-4e02-82c8-78a894c6e127",
+    "title": "🍽️ ️ Xíu mại",
+    "cleanTitle": "️ ️ Xíu mại",
+    "target": {
+      "kcal": 103.8,
+      "p": 11.9,
+      "c": 4.6,
+      "f": 4.2
+    },
+    "calculated": {
+      "p": 9.6,
+      "c": 4.6,
+      "f": 5.3,
+      "kcal": 102.1
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 46,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "fc022b46-983c-41b7-b86b-fb03e0bdaa1a",
+        "ingredient_name": "Cà chua chín",
+        "amount": 41,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "eefbbdad-5d66-4ee8-903f-4b1e3d54c92f",
+        "ingredient_name": "Hành tím băm",
+        "amount": 17,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "8db6d7df-6540-406c-afd4-c1e6ab263803",
+    "title": "🐟 Cá bạc má kho",
+    "cleanTitle": "Cá bạc má kho",
+    "target": {
+      "kcal": 166.9,
+      "p": 21.1,
+      "c": 8.7,
+      "f": 5.3
+    },
+    "calculated": {
+      "p": 22,
+      "c": 3.7,
+      "f": 5.1,
+      "kcal": 147.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "7980b73d-38e1-4531-aecd-06bd04e86cb6",
+        "ingredient_name": "Cá nục",
+        "amount": 94,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "a1e510a6-ed1f-495e-baef-0a5dfe6f61d1",
+        "ingredient_name": "Nước mắm cá cơm truyền thống",
+        "amount": 25,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "eefbbdad-5d66-4ee8-903f-4b1e3d54c92f",
+        "ingredient_name": "Hành tím băm",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "ee58af1c-5100-4cf2-9e15-41ecb1916dca",
+    "title": "🐟 Cá cơm lăn bột chiên",
+    "cleanTitle": "Cá cơm lăn bột chiên",
+    "target": {
+      "kcal": 316.1,
+      "p": 6.7,
+      "c": 33.4,
+      "f": 17.3
+    },
+    "calculated": {
+      "p": 9.4,
+      "c": 29.2,
+      "f": 17.5,
+      "kcal": 308.5
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "464ed010-4b84-432a-ae4e-e757500637f0",
+        "ingredient_name": "Cá bống tươi",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c7ecdb5d-5385-4744-93ed-eee8e201a9c0",
+        "ingredient_name": "Bánh tráng mỏng",
+        "amount": 37,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 17,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "02cba354-332e-457e-8b7e-802fce7617f6",
+    "title": "🐟 Cá hú kho",
+    "cleanTitle": "Cá hú kho",
+    "target": {
+      "kcal": 184.5,
+      "p": 15.6,
+      "c": 8.7,
+      "f": 9.7
+    },
+    "calculated": {
+      "p": 15.7,
+      "c": 3.7,
+      "f": 9.9,
+      "kcal": 164.3
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "38abc9a2-00b5-4c9b-b137-327651c7996f",
+        "ingredient_name": "Cá lóc đồng (Cá quả)",
+        "amount": 70,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "a1e510a6-ed1f-495e-baef-0a5dfe6f61d1",
+        "ingredient_name": "Nước mắm cá cơm truyền thống",
+        "amount": 25,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 8,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "eefbbdad-5d66-4ee8-903f-4b1e3d54c92f",
+        "ingredient_name": "Hành tím băm",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "c04d8452-97b7-4e67-baaf-88547993cb1e",
+    "title": "🐟 Cá viên kho",
+    "cleanTitle": "Cá viên kho",
+    "target": {
+      "kcal": 99.6,
+      "p": 15.1,
+      "c": 3.5,
+      "f": 2.8
+    },
+    "calculated": {
+      "p": 20.8,
+      "c": 3.2,
+      "f": 3.3,
+      "kcal": 123.1
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "a3b3517a-e958-4689-ae9a-c25102b02ebe",
+        "ingredient_name": "Chà bông cá lóc",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "a1e510a6-ed1f-495e-baef-0a5dfe6f61d1",
+        "ingredient_name": "Nước mắm cá cơm truyền thống",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "16074944-a0aa-465f-829a-01f4985db44f",
+    "title": "🐟 Chả cá thác lác chiên",
+    "cleanTitle": "Chả cá thác lác chiên",
+    "target": {
+      "kcal": 133.3,
+      "p": 11.3,
+      "c": 0.2,
+      "f": 9.7
+    },
+    "calculated": {
+      "p": 11.2,
+      "c": 0.7,
+      "f": 9.6,
+      "kcal": 131.8
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "464ed010-4b84-432a-ae4e-e757500637f0",
+        "ingredient_name": "Cá bống tươi",
+        "amount": 70,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 9,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "6db1ca0e-b7a3-4c51-acee-731f2e68a206",
+    "title": "🥗 Gỏi bắp chuối",
+    "cleanTitle": "Gỏi bắp chuối",
+    "target": {
+      "kcal": 123.2,
+      "p": 5.1,
+      "c": 11.3,
+      "f": 6.4
+    },
+    "calculated": {
+      "p": 9.4,
+      "c": 7.6,
+      "f": 8.9,
+      "kcal": 147.3
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "af301e29-a2c3-4996-82b7-4f31ea910962",
+        "ingredient_name": "Hoa chuối thái mỏng",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "39bdae83-b011-4cb4-99cb-ba2f3e15cb68",
+        "ingredient_name": "Đậu phộng",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "f5484976-2f0f-49ef-9044-fa3b0e438dc9",
+        "ingredient_name": "Dầu mè thơm",
+        "amount": 2,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "dbbd06c6-8868-4360-ac3f-4b13f599339d",
+    "title": "🥗 Gỏi bì cuốn",
+    "cleanTitle": "Gỏi bì cuốn",
+    "target": {
+      "kcal": 116,
+      "p": 10.3,
+      "c": 10.6,
+      "f": 3.6
+    },
+    "calculated": {
+      "p": 12.1,
+      "c": 16.8,
+      "f": 7.2,
+      "kcal": 179.3
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "c7ecdb5d-5385-4744-93ed-eee8e201a9c0",
+        "ingredient_name": "Bánh tráng mỏng",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "6d678056-3223-4ab0-9aae-0e74794c1e91",
+        "ingredient_name": "Thịt heo nạc",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "560c8270-3ea9-40ac-a6ca-28189f6d0185",
+        "ingredient_name": "Thịt ba chỉ heo",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "aed34b93-a7e9-4602-987c-c1e907bcb0e0",
+        "ingredient_name": "Xà lách Romaine",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "7d9c24b3-bb50-4fea-a0f3-a17db3b905fe",
+    "title": "🥗 Gỏi ngó sen",
+    "cleanTitle": "Gỏi ngó sen",
+    "target": {
+      "kcal": 286.1,
+      "p": 12.2,
+      "c": 38.4,
+      "f": 9.3
+    },
+    "calculated": {
+      "p": 14.4,
+      "c": 34.4,
+      "f": 9.4,
+      "kcal": 266.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "c1994196-0083-449d-ad0d-20e2296948a4",
+        "ingredient_name": "Ngó sen tươi",
+        "amount": 155,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3eb81c14-ff93-4143-bc2e-772c2a2c7b25",
+        "ingredient_name": "Tôm sú bóc vỏ",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4f93a8ed-31f3-4e29-b3cc-97dfe2b39dad",
+        "ingredient_name": "Cà rốt tươi",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "f5484976-2f0f-49ef-9044-fa3b0e438dc9",
+        "ingredient_name": "Dầu mè thơm",
+        "amount": 9,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "014c84c9-7680-4a6f-9413-f00141c5a438",
+    "title": "🥞 Bánh hỏi (tươi)",
+    "cleanTitle": "Bánh hỏi (tươi)",
+    "target": {
+      "kcal": 112,
+      "p": 2.3,
+      "c": 25,
+      "f": 0.3
+    },
+    "calculated": {
+      "p": 2.7,
+      "c": 25.5,
+      "f": 1.3,
+      "kcal": 124
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 1,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "2351833f-afd9-4730-b043-eaf56d63a553",
+    "title": "🥞 Bột chiên",
+    "cleanTitle": "Bột chiên",
+    "target": {
+      "kcal": 443,
+      "p": 13.2,
+      "c": 39.5,
+      "f": 25.8
+    },
+    "calculated": {
+      "p": 13.2,
+      "c": 39.5,
+      "f": 26.1,
+      "kcal": 442.6
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 122,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "55533c92-b969-4a7b-b2fc-79398ffe5221",
+        "ingredient_name": "Trứng gà tươi",
+        "amount": 69,
+        "unit": "quả",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 19,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 16,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "561ca814-fc84-49b3-a040-d5e1c131553f",
+    "title": "🥣 Cháo đậu đỏ",
+    "cleanTitle": "Cháo đậu đỏ",
+    "target": {
+      "kcal": 323.4,
+      "p": 10.6,
+      "c": 43.7,
+      "f": 11.8
+    },
+    "calculated": {
+      "p": 10.7,
+      "c": 43.5,
+      "f": 11.7,
+      "kcal": 327.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 78,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "cc43af21-2c94-4121-896f-715f07706f95",
+        "ingredient_name": "Đậu đỏ hạt",
+        "amount": 38,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 11,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 11,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "cce20833-1a5d-419f-a61d-a7f362f5c94b",
+    "title": "🥣 Cháo gỏi vịt",
+    "cleanTitle": "Cháo gỏi vịt",
+    "target": {
+      "kcal": 931.9,
+      "p": 50.2,
+      "c": 47.1,
+      "f": 60.3
+    },
+    "calculated": {
+      "p": 49.9,
+      "c": 47,
+      "f": 60.1,
+      "kcal": 927.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 144,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "b71428ea-95b0-4baf-ad86-c21f90c3776d",
+        "ingredient_name": "Thịt vịt",
+        "amount": 250,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "b5b21449-1ef9-43bc-93c5-0173de76dfb1",
+        "ingredient_name": "Bắp cải trắng",
+        "amount": 120,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "f5484976-2f0f-49ef-9044-fa3b0e438dc9",
+        "ingredient_name": "Dầu mè thơm",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "b9454174-4f0d-496c-8067-7ff42f5c88ca",
+    "title": "🥣 Cháo huyết",
+    "cleanTitle": "Cháo huyết",
+    "target": {
+      "kcal": 331.7,
+      "p": 22.1,
+      "c": 40.8,
+      "f": 8.9
+    },
+    "calculated": {
+      "p": 22.8,
+      "c": 44.9,
+      "f": 0.9,
+      "kcal": 283
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 146,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "aed2a5cd-b7af-4749-8652-4671dd5fb0f8",
+        "ingredient_name": "Huyết heo luộc",
+        "amount": 149,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "128c37f8-6381-4f07-9742-864d4e2ea94f",
+        "ingredient_name": "Giá đỗ xanh",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "12797859-f0b7-480e-9e54-744ea4164693",
+    "title": "🥣 Cháo lòng",
+    "cleanTitle": "Cháo lòng",
+    "target": {
+      "kcal": 411.5,
+      "p": 30.8,
+      "c": 41.7,
+      "f": 13.5
+    },
+    "calculated": {
+      "p": 31.8,
+      "c": 44.3,
+      "f": 4.2,
+      "kcal": 346.5
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 141,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3cbbf592-3318-419b-8122-8bd186c1cc50",
+        "ingredient_name": "Bao tử heo",
+        "amount": 120,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "aed2a5cd-b7af-4749-8652-4671dd5fb0f8",
+        "ingredient_name": "Huyết heo luộc",
+        "amount": 90,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "65a20d98-06a2-4c31-a88e-d25a2b2a7859",
+        "ingredient_name": "Gừng tươi",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "d2fbd93d-8e3b-4a0f-8118-252bd3139252",
+    "title": "🥣 Cháo trắng",
+    "cleanTitle": "Cháo trắng",
+    "target": {
+      "kcal": 252,
+      "p": 8.1,
+      "c": 52,
+      "f": 1.3
+    },
+    "calculated": {
+      "p": 6.1,
+      "c": 59.9,
+      "f": 1.7,
+      "kcal": 286.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "12781aa4-8a11-46fb-b0cd-217f6b1990a7",
+        "ingredient_name": "Cơm trắng dẻo",
+        "amount": 206,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "f5484976-2f0f-49ef-9044-fa3b0e438dc9",
+        "ingredient_name": "Dầu mè thơm",
+        "amount": 1,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "55b7f394-950c-4154-97e3-80fcaef45f44",
+    "title": "🥩 Bò bía",
+    "cleanTitle": "Bò bía",
+    "target": {
+      "kcal": 92.7,
+      "p": 5.8,
+      "c": 7.7,
+      "f": 4.3
+    },
+    "calculated": {
+      "p": 5.4,
+      "c": 25.4,
+      "f": 3.5,
+      "kcal": 154
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "c7ecdb5d-5385-4744-93ed-eee8e201a9c0",
+        "ingredient_name": "Bánh tráng mỏng",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "35d91e3d-04ca-417a-82ab-1071d1830732",
+        "ingredient_name": "Khoai lang mật hấp",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "34c59053-d0f4-4347-909b-0314ef538602",
+        "ingredient_name": "Tép gạo",
+        "amount": 34,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "f5484976-2f0f-49ef-9044-fa3b0e438dc9",
+        "ingredient_name": "Dầu mè thơm",
+        "amount": 3,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "12a2075f-7cb1-474a-b308-1e6a885722fd",
+    "title": "🥩 Bò cuốn lá lốt",
+    "cleanTitle": "Bò cuốn lá lốt",
+    "target": {
+      "kcal": 840.9,
+      "p": 49,
+      "c": 133.1,
+      "f": 12.5
+    },
+    "calculated": {
+      "p": 49.3,
+      "c": 97.3,
+      "f": 12.3,
+      "kcal": 703.4
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "7e2cea51-4354-45e7-82bd-f7fb5a995313",
+        "ingredient_name": "Thịt thăn bò nạc",
+        "amount": 167,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c7ecdb5d-5385-4744-93ed-eee8e201a9c0",
+        "ingredient_name": "Bánh tráng mỏng",
+        "amount": 120,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "aed34b93-a7e9-4602-987c-c1e907bcb0e0",
+        "ingredient_name": "Xà lách Romaine",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 6,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "1bbad21d-90cb-49ee-941d-93e70854d372",
+    "title": "🥩 Bò cuốn mỡ chài",
+    "cleanTitle": "Bò cuốn mỡ chài",
+    "target": {
+      "kcal": 1180.1,
+      "p": 60.4,
+      "c": 130.9,
+      "f": 46.1
+    },
+    "calculated": {
+      "p": 60.7,
+      "c": 94.7,
+      "f": 46.6,
+      "kcal": 1047.1
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "7e2cea51-4354-45e7-82bd-f7fb5a995313",
+        "ingredient_name": "Thịt thăn bò nạc",
+        "amount": 185,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c7ecdb5d-5385-4744-93ed-eee8e201a9c0",
+        "ingredient_name": "Bánh tráng mỏng",
+        "amount": 120,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "560c8270-3ea9-40ac-a6ca-28189f6d0185",
+        "ingredient_name": "Thịt ba chỉ heo",
+        "amount": 46,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 30,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "ac0d464e-8efc-4fc3-a621-96c94656360a",
+    "title": "🥩 Gỏi khô bò",
+    "cleanTitle": "Gỏi khô bò",
+    "target": {
+      "kcal": 267.1,
+      "p": 15.8,
+      "c": 25.1,
+      "f": 11.5
+    },
+    "calculated": {
+      "p": 20.5,
+      "c": 10.4,
+      "f": 10.9,
+      "kcal": 217.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "7e2cea51-4354-45e7-82bd-f7fb5a995313",
+        "ingredient_name": "Thịt thăn bò nạc",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "d73bb61a-2d53-47bc-997c-1464e7d70e52",
+        "ingredient_name": "Dưa leo (Dưa chuột)",
+        "amount": 200,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "39bdae83-b011-4cb4-99cb-ba2f3e15cb68",
+        "ingredient_name": "Đậu phộng",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "a1e510a6-ed1f-495e-baef-0a5dfe6f61d1",
+        "ingredient_name": "Nước mắm cá cơm truyền thống",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "1a6ef47c-1de5-4cec-a146-089d2f27f60e",
+    "title": "🥩 Hủ tíu bò kho",
+    "cleanTitle": "Hủ tíu bò kho",
+    "target": {
+      "kcal": 410.2,
+      "p": 17,
+      "c": 55.4,
+      "f": 13.4
+    },
+    "calculated": {
+      "p": 20.1,
+      "c": 50.8,
+      "f": 13.5,
+      "kcal": 401.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 138,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "9edde12c-1af7-4171-ae55-ab58d2735a7b",
+        "ingredient_name": "Bắp bò hoa",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4f93a8ed-31f3-4e29-b3cc-97dfe2b39dad",
+        "ingredient_name": "Cà rốt tươi",
+        "amount": 80,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 11,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "fbd04f2b-5b5e-46f9-a892-954cb97bac79",
+    "title": "🥩 Mì bò viên",
+    "cleanTitle": "Mì bò viên",
+    "target": {
+      "kcal": 456,
+      "p": 19.5,
+      "c": 62.1,
+      "f": 14.4
+    },
+    "calculated": {
+      "p": 24.8,
+      "c": 48.2,
+      "f": 14.2,
+      "kcal": 420.8
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "1a79a9ee-5690-4010-83a3-9e7fd84b316c",
+        "ingredient_name": "Mì Ý nguyên cám Spaghetti",
+        "amount": 67,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "7e2cea51-4354-45e7-82bd-f7fb5a995313",
+        "ingredient_name": "Thịt thăn bò nạc",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c4d7b135-43be-40df-be73-6052ef2da1ab",
+        "ingredient_name": "Cải thìa (Bok choy)",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 11,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "6cad4b3a-ccf2-47a7-8115-1e613adf1fd4",
+    "title": "🥩 Phở bò chín",
+    "cleanTitle": "Phở bò chín",
+    "target": {
+      "kcal": 430.6,
+      "p": 20.9,
+      "c": 59.3,
+      "f": 12.2
+    },
+    "calculated": {
+      "p": 21.3,
+      "c": 59.1,
+      "f": 12.6,
+      "kcal": 433
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 187,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "9edde12c-1af7-4171-ae55-ab58d2735a7b",
+        "ingredient_name": "Bắp bò hoa",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 10,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "8dbf877d-7ec6-4a71-ba5f-89f724695c3e",
+    "title": "🥩 Phở bò tái",
+    "cleanTitle": "Phở bò tái",
+    "target": {
+      "kcal": 414.1,
+      "p": 17.9,
+      "c": 59.3,
+      "f": 11.7
+    },
+    "calculated": {
+      "p": 21.3,
+      "c": 53.5,
+      "f": 11.8,
+      "kcal": 406.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 169,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "7e2cea51-4354-45e7-82bd-f7fb5a995313",
+        "ingredient_name": "Thịt thăn bò nạc",
+        "amount": 60,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 9,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "05518c16-26b7-4768-b27b-23f87515667a",
+    "title": "🥩 Phở bò viên",
+    "cleanTitle": "Phở bò viên",
+    "target": {
+      "kcal": 430.5,
+      "p": 16.3,
+      "c": 59.6,
+      "f": 14.1
+    },
+    "calculated": {
+      "p": 18.9,
+      "c": 54.7,
+      "f": 13.5,
+      "kcal": 415.2
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 173,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "7e2cea51-4354-45e7-82bd-f7fb5a995313",
+        "ingredient_name": "Thịt thăn bò nạc",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 15,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 11,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "9a22c1f9-fd29-49ec-87ae-aadb978dacc9",
+    "title": "🦐 Bánh canh cua",
+    "cleanTitle": "Bánh canh cua",
+    "target": {
+      "kcal": 378.4,
+      "p": 21.4,
+      "c": 54.3,
+      "f": 8.4
+    },
+    "calculated": {
+      "p": 21.3,
+      "c": 54.6,
+      "f": 8.7,
+      "kcal": 378.6
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "ebd2fc32-95c7-439e-8440-f2e2f710b0dc",
+        "ingredient_name": "Bánh phở tươi",
+        "amount": 169,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "5f97a9c3-0729-4e03-b367-e02e4364dfd5",
+        "ingredient_name": "Thịt cua biển",
+        "amount": 81,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 7,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "4065dafc-be7d-409e-a8df-d1cd9b5ce300",
+    "title": "🦐 Gỏi tôm cuốn",
+    "cleanTitle": "Gỏi tôm cuốn",
+    "target": {
+      "kcal": 147,
+      "p": 7.7,
+      "c": 17.8,
+      "f": 5
+    },
+    "calculated": {
+      "p": 10.8,
+      "c": 16.9,
+      "f": 5.3,
+      "kcal": 155.5
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "c7ecdb5d-5385-4744-93ed-eee8e201a9c0",
+        "ingredient_name": "Bánh tráng mỏng",
+        "amount": 20,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "3eb81c14-ff93-4143-bc2e-772c2a2c7b25",
+        "ingredient_name": "Tôm sú bóc vỏ",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "aed34b93-a7e9-4602-987c-c1e907bcb0e0",
+        "ingredient_name": "Xà lách Romaine",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "f5484976-2f0f-49ef-9044-fa3b0e438dc9",
+        "ingredient_name": "Dầu mè thơm",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "dbf5c7eb-8b28-449c-9a98-b609862caadd",
+    "title": "🦐 Mực xào sả ớt",
+    "cleanTitle": "Mực xào sả ớt",
+    "target": {
+      "kcal": 184.7,
+      "p": 31,
+      "c": 0.1,
+      "f": 6.7
+    },
+    "calculated": {
+      "p": 30.6,
+      "c": 3.4,
+      "f": 6.7,
+      "kcal": 193.5
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "9d240a98-2eb6-4ca2-9ebb-fb58765b9980",
+        "ingredient_name": "Mực tươi",
+        "amount": 186,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "838ca788-89f7-4726-9d55-28c373d08455",
+        "ingredient_name": "Sả băm",
+        "amount": 10,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "eefbbdad-5d66-4ee8-903f-4b1e3d54c92f",
+        "ingredient_name": "Hành tím băm",
+        "amount": 5,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "bf2fb666-e61d-425a-be9c-55163705057a",
+    "title": "🦐 Mực xào thập cẩm",
+    "cleanTitle": "Mực xào thập cẩm",
+    "target": {
+      "kcal": 136.7,
+      "p": 17.4,
+      "c": 3.5,
+      "f": 5.9
+    },
+    "calculated": {
+      "p": 17.4,
+      "c": 5.6,
+      "f": 6.1,
+      "kcal": 141.6
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "9d240a98-2eb6-4ca2-9ebb-fb58765b9980",
+        "ingredient_name": "Mực tươi",
+        "amount": 98,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "9717ea07-777e-46d2-bc52-bb4ea5cb0f4e",
+        "ingredient_name": "Bông cải xanh (Broccoli)",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "4f93a8ed-31f3-4e29-b3cc-97dfe2b39dad",
+        "ingredient_name": "Cà rốt tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 5,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "6ab28550-8302-42a3-ba15-1fd80930095b",
+    "title": "🦐 Tôm lăn bột chiên",
+    "cleanTitle": "Tôm lăn bột chiên",
+    "target": {
+      "kcal": 246.5,
+      "p": 2.6,
+      "c": 36.3,
+      "f": 10.1
+    },
+    "calculated": {
+      "p": 10.8,
+      "c": 23.8,
+      "f": 10.2,
+      "kcal": 227.9
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "3eb81c14-ff93-4143-bc2e-772c2a2c7b25",
+        "ingredient_name": "Tôm sú bóc vỏ",
+        "amount": 40,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c7ecdb5d-5385-4744-93ed-eee8e201a9c0",
+        "ingredient_name": "Bánh tráng mỏng",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "adf65fd5-6aeb-48d9-88fb-0572aa85441e",
+        "ingredient_name": "Dầu ăn thực vật",
+        "amount": 10,
+        "unit": "ml",
+        "notes": "auto-generated"
+      }
+    ]
+  },
+  {
+    "recipeId": "0c74d1fc-a93e-4315-93ee-ec6385479e96",
+    "title": "🦐 Tôm sốt cà",
+    "cleanTitle": "Tôm sốt cà",
+    "target": {
+      "kcal": 248.1,
+      "p": 12.5,
+      "c": 28.6,
+      "f": 9.3
+    },
+    "calculated": {
+      "p": 14,
+      "c": 8.6,
+      "f": 9.5,
+      "kcal": 168.7
+    },
+    "ingredients": [
+      {
+        "ingredient_id": "3eb81c14-ff93-4143-bc2e-772c2a2c7b25",
+        "ingredient_name": "Tôm sú bóc vỏ",
+        "amount": 50,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "fc022b46-983c-41b7-b86b-fb03e0bdaa1a",
+        "ingredient_name": "Cà chua chín",
+        "amount": 150,
+        "unit": "g",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "c1501567-11b7-4efd-ba54-77d729834c35",
+        "ingredient_name": "Dầu ô liu nguyên chất",
+        "amount": 9,
+        "unit": "ml",
+        "notes": "auto-generated"
+      },
+      {
+        "ingredient_id": "50298ccc-594e-4869-8fe0-3a3bae47b941",
+        "ingredient_name": "Hành lá tươi",
+        "amount": 30,
+        "unit": "g",
+        "notes": "auto-generated"
+      }
+    ]
+  }
+]

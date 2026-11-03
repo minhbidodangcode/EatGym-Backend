@@ -2,6 +2,12 @@ import { Router } from 'express';
 import { pool } from '../db/pool.js';
 import { requireAuth, optionalAuth } from '../middleware/auth.js';
 import { ApiError } from '../errors.js';
+import {
+  normalizeTagSlug,
+  buildRecipeFilterQuery,
+  TAG_METADATA,
+  MEAL_TYPE_METADATA,
+} from '../nutrition/recipe-filter.js';
 
 function hasDiacritics(str) {
   return /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ]/.test(str);
@@ -280,57 +286,134 @@ router.get('/ingredients', async (req, res, next) => {
 });
 
 // -------------------------------------------------------------
-// GET /api/recipes - Tìm kiếm và lọc công thức món ăn
+// GET /api/recipes/filters - Metadata bộ lọc công thức động từ DB thật
+// -------------------------------------------------------------
+router.get('/recipes/filters', async (req, res, next) => {
+  try {
+    // 1. Tags với số lượng công thức thực tế
+    const tagCountRes = await pool.query(`
+      SELECT rt.tag_slug, COUNT(*)::int AS count
+      FROM recipe_tags rt
+      JOIN recipes r ON rt.recipe_id = r.id
+      GROUP BY rt.tag_slug
+      ORDER BY count DESC
+    `);
+    const tags = tagCountRes.rows.map((row) => ({
+      slug: row.tag_slug,
+      label: TAG_METADATA[row.tag_slug]?.label || row.tag_slug,
+      icon: TAG_METADATA[row.tag_slug]?.icon || '🏷️',
+      count: row.count,
+    }));
+
+    // 2. Meal types với số lượng công thức thực tế
+    const mealCountRes = await pool.query(`
+      SELECT meal_type, COUNT(*)::int AS count
+      FROM recipes
+      GROUP BY meal_type
+      ORDER BY count DESC
+    `);
+    const mealTypes = mealCountRes.rows.map((row) => ({
+      value: row.meal_type,
+      label: MEAL_TYPE_METADATA[row.meal_type]?.label || row.meal_type,
+      count: row.count,
+    }));
+
+    // 3. Difficulties với số lượng công thức thực tế
+    const diffCountRes = await pool.query(`
+      SELECT difficulty, COUNT(*)::int AS count
+      FROM recipes
+      WHERE difficulty IS NOT NULL
+      GROUP BY difficulty
+      ORDER BY count DESC
+    `);
+    const difficulties = diffCountRes.rows.map((row) => ({
+      value: row.difficulty,
+      label: row.difficulty,
+      count: row.count,
+    }));
+
+    // 4. Min/Max ranges cho thanh trượt / bộ lọc
+    const rangeRes = await pool.query(`
+      SELECT
+        COALESCE(MIN(kcal), 0)::float AS min_kcal,
+        COALESCE(MAX(kcal), 0)::float AS max_kcal,
+        COALESCE(MIN(protein_g), 0)::float AS min_p,
+        COALESCE(MAX(protein_g), 0)::float AS max_p,
+        COALESCE(MIN(cooking_time_min), 0)::int AS min_t,
+        COALESCE(MAX(cooking_time_min), 0)::int AS max_t
+      FROM recipes
+    `);
+    const r = rangeRes.rows[0];
+
+    res.json({
+      tags,
+      mealTypes,
+      difficulties,
+      ranges: {
+        kcal: { min: r.min_kcal, max: r.max_kcal },
+        protein: { min: r.min_p, max: r.max_p },
+        time: { min: r.min_t, max: r.max_t },
+      },
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+// -------------------------------------------------------------
+// GET /api/recipes - Tìm kiếm và lọc công thức món ăn Server-Side
 // -------------------------------------------------------------
 router.get('/recipes', async (req, res, next) => {
   try {
-    const search = typeof req.query.q === 'string' ? req.query.q.trim() : '';
-    const tag = typeof req.query.tag === 'string' ? req.query.tag.trim() : '';
+    const { whereClause, params, sortClause, limit, offset } = buildRecipeFilterQuery(req.query);
 
-    let query = `
+    // 1. Tổng số dòng khớp trước limit
+    const countQuery = `
+      SELECT COUNT(*)::int AS total
+      FROM recipes r
+      ${whereClause}
+    `;
+    const countResult = await pool.query(countQuery, params);
+    const total = countResult.rows[0]?.total || 0;
+
+    // 2. Lấy dữ liệu công thức kèm nguyên liệu và tag slugs đã chuẩn hoá
+    const selectParams = [...params, limit, offset];
+    const limitIdx = '$' + (selectParams.length - 1);
+    const offsetIdx = '$' + selectParams.length;
+
+    const dataQuery = `
       SELECT r.id, r.title, r.icon, r.description, r.kcal, r.protein_g, r.carbs_g, r.fat_g,
              r.image_url, r.cooking_time_min, r.servings, r.difficulty, r.tags, r.instructions,
+             r.is_vegetarian, r.meal_type,
              COALESCE(
-               json_agg(
-                 json_build_object(
-                   'name', ri.ingredient_name,
-                   'amount', ri.amount,
-                   'unit', ri.unit,
-                   'notes', ri.notes
+               (
+                 SELECT json_agg(
+                   json_build_object(
+                     'name', ri.ingredient_name,
+                     'amount', ri.amount,
+                     'unit', ri.unit,
+                     'notes', ri.notes
+                   )
                  )
-               ) FILTER (WHERE ri.id IS NOT NULL), '[]'
-             ) AS ingredients
+                 FROM recipe_ingredients ri
+                 WHERE ri.recipe_id = r.id
+               ), '[]'::json
+             ) AS ingredients,
+             COALESCE(
+               (
+                 SELECT array_agg(rt.tag_slug)
+                 FROM recipe_tags rt
+                 WHERE rt.recipe_id = r.id
+               ), ARRAY[]::varchar[]
+             ) AS tag_slugs
       FROM recipes r
-      LEFT JOIN recipe_ingredients ri ON r.id = ri.recipe_id
-      WHERE 1=1
-    `;
-    const params = [];
-
-    if (search && typeof search === 'string' && search.trim()) {
-      const tokens = search.trim().split(/\s+/).filter(Boolean);
-      for (const tok of tokens) {
-        const safeTok = escapeRegex(tok);
-        if (hasDiacritics(tok)) {
-          params.push(`(^|[^a-zA-Z0-9])${safeTok}`);
-          query += ` AND (r.title ~* $${params.length} OR ri.ingredient_name ~* $${params.length})`;
-        } else {
-          params.push(`(^|[^a-zA-Z0-9])${safeTok}`);
-          query += ` AND (unaccent(r.title) ~* unaccent($${params.length}) OR unaccent(ri.ingredient_name) ~* unaccent($${params.length}))`;
-        }
-      }
-    }
-
-    if (tag && tag !== 'Tất cả') {
-      params.push(tag);
-      query += ` AND $${params.length} = ANY(r.tags)`;
-    }
-
-    query += `
-      GROUP BY r.id
-      ORDER BY r.title ASC
+      ${whereClause}
+      ORDER BY ${sortClause}
+      LIMIT ${limitIdx} OFFSET ${offsetIdx}
     `;
 
-    const result = await pool.query(query, params);
+    const result = await pool.query(dataQuery, selectParams);
+
     res.json({
       recipes: result.rows.map((row) => ({
         id: row.id,
@@ -347,9 +430,18 @@ router.get('/recipes', async (req, res, next) => {
         servings: row.servings,
         difficulty: row.difficulty,
         tags: row.tags || [],
+        tagSlugs: row.tag_slugs || [],
+        tag_slugs: row.tag_slugs || [],
         instructions: row.instructions,
-        ingredients: row.ingredients
-      }))
+        ingredients: row.ingredients,
+        isVegetarian: row.is_vegetarian ?? false,
+        is_vegetarian: row.is_vegetarian ?? false,
+        mealType: row.meal_type ?? 'main',
+        meal_type: row.meal_type ?? 'main',
+      })),
+      total,
+      limit,
+      offset,
     });
   } catch (error) {
     next(error);
@@ -357,8 +449,66 @@ router.get('/recipes', async (req, res, next) => {
 });
 
 // -------------------------------------------------------------
-// POST /api/recipes/suggest - Đề xuất món tlợn nguyên liệu sẵn có
+// POST /api/recipes/suggest - Đề xuất món từ nguyên liệu sẵn có
 // -------------------------------------------------------------
+function extractIngredientKeywords(rawName) {
+  if (!rawName || typeof rawName !== 'string') return [];
+  const cleaned = rawName
+    .replace(/\.+$/, '')
+    .replace(/[()]/g, ' ')
+    .trim();
+
+  const keywords = new Set();
+  const lower = cleaned.toLowerCase();
+
+  // Root mapping
+  if (lower.includes('bông cải') || lower.includes('broccoli') || lower.includes('súp lơ')) {
+    keywords.add('bông cải');
+    keywords.add('broccoli');
+    keywords.add('súp lơ');
+  }
+  if (lower.includes('gà')) {
+    keywords.add('thịt gà');
+    keywords.add('ức gà');
+    keywords.add('gà');
+  }
+  if (lower.includes('tỏi')) {
+    keywords.add('tỏi');
+    keywords.add('tỏi băm');
+  }
+  if (lower.includes('bò')) {
+    keywords.add('thịt bò');
+    keywords.add('bò');
+  }
+  if (lower.includes('lợn') || lower.includes('heo')) {
+    keywords.add('thịt lợn');
+    keywords.add('thịt heo');
+  }
+  if (lower.includes('tôm')) {
+    keywords.add('tôm');
+  }
+  if (lower.includes('trứng')) {
+    keywords.add('trứng');
+  }
+  if (lower.includes('cá hồi')) {
+    keywords.add('cá hồi');
+  } else if (lower.includes('cá')) {
+    keywords.add('cá');
+  }
+
+  // Strip adjectives
+  const stripped = lower
+    .replace(/\b(tươi|nạc|phi lê|đóng hộp|hộp|xay|khô|ta|thả vườn|băm|cắt khúc|hấp|sốt|luộc)\b/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (stripped.length >= 2) {
+    keywords.add(stripped);
+  }
+  keywords.add(lower);
+
+  return Array.from(keywords).filter((k) => k.length >= 2);
+}
+
 router.post('/recipes/suggest', optionalAuth, async (req, res, next) => {
   try {
     const { ingredients = [], maxTime } = req.body;
@@ -422,45 +572,78 @@ router.post('/recipes/suggest', optionalAuth, async (req, res, next) => {
           time: r.cooking_time_min,
           tags: r.tags || [],
           instructions: r.instructions,
-          matchingCount: 0
+          matchingCount: 0,
+          isSaved: false
         }))
       });
     }
 
-    const patterns = ingredients.map((name) => `%${name.trim()}%`);
-    const params = [patterns];
-    let preferenceFilter = '';
-    if (allergyPatterns.length) {
-      params.push(allergyPatterns);
-      preferenceFilter += ` AND NOT EXISTS (SELECT 1 FROM recipe_ingredients ai WHERE ai.recipe_id = r.id AND ai.ingredient_name ILIKE ANY($${params.length}::text[]))`;
-    }
-    if (dietaryPreferences.length) {
-      params.push(dietaryPreferences.map((value) => value.trim()));
-      preferenceFilter += ` AND r.tags && $${params.length}::text[]`;
-    }
-    let timeCondition = '';
-    if (maxCookingTime && Number.isFinite(maxCookingTime)) {
-      params.push(maxCookingTime);
-      timeCondition = ` AND r.cooking_time_min <= $${params.length}`;
+    const keywordGroups = ingredients
+      .map(extractIngredientKeywords)
+      .filter((group) => group.length > 0);
+
+    const rawSavedIds = Array.isArray(req.body?.savedRecipeIds) ? req.body.savedRecipeIds : [];
+    const savedRecipeIds = rawSavedIds.map(String);
+    const userId = req.auth?.userId || null;
+
+    const params = [];
+    const matchCaseExprs = [];
+
+    keywordGroups.forEach((group) => {
+      const patterns = group.map((kw) => `%${kw}%`);
+      params.push(patterns);
+      const paramIdx = `$${params.length}`;
+      matchCaseExprs.push(
+        `(CASE WHEN EXISTS (
+          SELECT 1 FROM recipe_ingredients ri
+          WHERE ri.recipe_id = r.id AND (ri.ingredient_name ILIKE ANY(${paramIdx}::text[]) OR r.title ILIKE ANY(${paramIdx}::text[]))
+        ) THEN 1 ELSE 0 END)`
+      );
+    });
+
+    const matchingCountExpr = matchCaseExprs.length > 0 ? `(${matchCaseExprs.join(' + ')})` : '0';
+
+    params.push(savedRecipeIds);
+    const savedIdsIdx = `$${params.length}`;
+
+    let savedExpr = `(r.id::text = ANY(${savedIdsIdx}::text[]))`;
+    if (userId) {
+      params.push(userId);
+      const userIdx = `$${params.length}`;
+      savedExpr = `((r.id::text = ANY(${savedIdsIdx}::text[])) OR EXISTS (SELECT 1 FROM user_favorite_recipes uf WHERE uf.user_id = ${userIdx} AND uf.recipe_id = r.id))`;
     }
 
-    const result = await pool.query(
-      `
-      SELECT r.id, r.title, r.icon, r.description, r.kcal, r.protein_g, r.carbs_g, r.fat_g,
-             r.image_url, r.cooking_time_min, r.tags, r.instructions,
-             COUNT(ri.id) AS matching_count,
-             ARRAY_AGG(ri.ingredient_name) AS matched_ingredients
-      FROM recipes r
-      JOIN recipe_ingredients ri ON r.id = ri.recipe_id
-      WHERE (ri.ingredient_name ILIKE ANY($1::text[]) OR r.title ILIKE ANY($1::text[]))
-            ${preferenceFilter}
-            ${timeCondition}
-      GROUP BY r.id
-      ORDER BY matching_count DESC, r.cooking_time_min ASC, r.kcal ASC
-      LIMIT 12
-      `,
-      params
-    );
+    let filterConditions = '';
+    if (allergyPatterns.length) {
+      params.push(allergyPatterns);
+      filterConditions += ` AND NOT EXISTS (SELECT 1 FROM recipe_ingredients ai WHERE ai.recipe_id = r.id AND ai.ingredient_name ILIKE ANY($${params.length}::text[]))`;
+    }
+    if (dietaryPreferences.length) {
+      params.push(dietaryPreferences.map((v) => v.trim()));
+      filterConditions += ` AND r.tags && $${params.length}::text[]`;
+    }
+    if (maxCookingTime && Number.isFinite(maxCookingTime)) {
+      params.push(maxCookingTime);
+      filterConditions += ` AND r.cooking_time_min <= $${params.length}`;
+    }
+
+    const query = `
+      WITH recipe_matches AS (
+        SELECT r.id, r.title, r.icon, r.description, r.kcal, r.protein_g, r.carbs_g, r.fat_g,
+               r.image_url, r.cooking_time_min, r.tags, r.instructions,
+               ${matchingCountExpr} AS matching_count,
+               ${savedExpr} AS is_saved
+        FROM recipes r
+        WHERE 1=1 ${filterConditions}
+      )
+      SELECT *
+      FROM recipe_matches
+      WHERE matching_count > 0
+      ORDER BY matching_count DESC, is_saved DESC, cooking_time_min ASC, kcal ASC
+      LIMIT 50
+    `;
+
+    const result = await pool.query(query, params);
 
     if (result.rows.length === 0) {
       return res.json({ recipes: [] });
@@ -482,7 +665,7 @@ router.post('/recipes/suggest', optionalAuth, async (req, res, next) => {
         tags: row.tags || [],
         instructions: row.instructions,
         matchingCount: Number(row.matching_count),
-        matchedIngredients: row.matched_ingredients
+        isSaved: Boolean(row.is_saved)
       }))
     });
   } catch (error) {
