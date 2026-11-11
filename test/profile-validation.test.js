@@ -17,6 +17,32 @@ test('profile validation accepts and normalizes dietary preferences and macro ta
   assert.deepEqual(result.targetMacros, { calories: 1900, protein: 120, carbs: 200, fat: 60 });
 });
 
+test('profile validation accepts 4-step onboarding attributes', () => {
+  const result = validateProfile({
+    ...validProfile,
+    targetWeightKg: 65,
+    medicalHistory: ['Gout', 'Tiểu đường'],
+    favoriteFoods: ['Ức gà', 'Cá hồi'],
+    isVegan: true,
+    dietLifestyle: ['Eat Clean'],
+    cookingFrequency: 'daily',
+    groceryFrequency: 'weekly',
+    mealPrepEnabled: true,
+    creatorName: 'Chef Minh Gymer',
+    creatorHandle: '@minhgymer',
+    creatorBio: 'Ăn sạch - Tập chuẩn - Tối ưu macro',
+    cookingSpecialties: ['EatClean', 'HighProtein'],
+    kitchenSyncEnabled: true,
+    onboardingCompleted: true
+  });
+  assert.equal(result.targetWeightKg, 65);
+  assert.deepEqual(result.medicalHistory, ['Gout', 'Tiểu đường']);
+  assert.deepEqual(result.favoriteFoods, ['Ức gà', 'Cá hồi']);
+  assert.equal(result.isVegan, true);
+  assert.equal(result.creatorHandle, '@minhgymer');
+  assert.equal(result.onboardingCompleted, true);
+});
+
 test('profile validation rejects malformed preference lists and macro targets', () => {
   assert.throws(() => validateProfile({ ...validProfile, allergies: 'peanut' }), { code: 'VALIDATION_ERROR' });
   assert.throws(() => validateProfile({ ...validProfile, targetMacros: { protein: -1 } }), { code: 'VALIDATION_ERROR' });

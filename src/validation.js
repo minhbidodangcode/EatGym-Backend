@@ -74,12 +74,32 @@ export function validateProfile(body) {
     fail('dateOfBirth', 'dateOfBirth must use YYYY-MM-DD format.');
   }
   const stringList = (value, field) => {
-    if (value === undefined) return [];
+    if (value === undefined || value === null) return [];
     if (!Array.isArray(value) || value.length > 50 || value.some((item) => typeof item !== 'string' || !item.trim() || item.length > 80)) {
       fail(field, `${field} must be an array of up to 50 non-empty strings (80 characters max).`);
     }
     return [...new Set(value.map((item) => item.trim()))];
   };
+  const optionalNumber = (value, field, min, max) => {
+    if (value === undefined || value === null || value === '') return null;
+    const num = Number(value);
+    if (!Number.isFinite(num) || num < min || num > max) {
+      fail(field, `${field} must be a number between ${min} and ${max}.`);
+    }
+    return num;
+  };
+  const optionalString = (value, field, maxLen) => {
+    if (value === undefined || value === null) return null;
+    if (typeof value !== 'string') fail(field, `${field} must be a string.`);
+    const trimmed = value.trim();
+    if (trimmed.length > maxLen) fail(field, `${field} cannot exceed ${maxLen} characters.`);
+    return trimmed.length > 0 ? trimmed : null;
+  };
+  const booleanFlag = (value, fallback = false) => {
+    if (value === undefined || value === null) return fallback;
+    return Boolean(value);
+  };
+
   const targetMacros = input.targetMacros ?? {};
   if (!targetMacros || typeof targetMacros !== 'object' || Array.isArray(targetMacros)) fail('targetMacros', 'targetMacros must be an object.');
   for (const key of ['calories', 'protein', 'carbs', 'fat']) {
@@ -87,10 +107,27 @@ export function validateProfile(body) {
       fail(`targetMacros.${key}`, `${key} must be a number from 0 to 10000.`);
     }
   }
+
   return {
-    ...validateNutritionFields(input), dateOfBirth: input.dateOfBirth,
+    ...validateNutritionFields(input),
+    dateOfBirth: input.dateOfBirth,
+    targetWeightKg: optionalNumber(input.targetWeightKg, 'targetWeightKg', 10, 500),
     allergies: stringList(input.allergies, 'allergies'),
     dietaryPreferences: stringList(input.dietaryPreferences, 'dietaryPreferences'),
+    medicalHistory: stringList(input.medicalHistory, 'medicalHistory'),
+    favoriteFoods: stringList(input.favoriteFoods, 'favoriteFoods'),
+    isVegan: booleanFlag(input.isVegan, false),
+    dietLifestyle: stringList(input.dietLifestyle, 'dietLifestyle'),
+    cookingFrequency: optionalString(input.cookingFrequency, 'cookingFrequency', 50) || 'sometimes',
+    groceryFrequency: optionalString(input.groceryFrequency, 'groceryFrequency', 50) || 'weekly',
+    mealPrepEnabled: booleanFlag(input.mealPrepEnabled, true),
+    creatorName: optionalString(input.creatorName, 'creatorName', 120),
+    creatorHandle: optionalString(input.creatorHandle, 'creatorHandle', 60),
+    creatorBio: optionalString(input.creatorBio, 'creatorBio', 500),
+    cookingSpecialties: stringList(input.cookingSpecialties, 'cookingSpecialties'),
+    kitchenSyncEnabled: booleanFlag(input.kitchenSyncEnabled, true),
+    avatarUrl: optionalString(input.avatarUrl, 'avatarUrl', 500),
+    onboardingCompleted: booleanFlag(input.onboardingCompleted, true),
     targetMacros
   };
 }

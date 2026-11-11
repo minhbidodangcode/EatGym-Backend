@@ -24,10 +24,25 @@ function serializeProfile(row) {
     age: calculateAge(dateOfBirth),
     heightCm: Number(row.height_cm),
     weightKg: Number(row.weight_kg),
+    targetWeightKg: row.target_weight_kg ? Number(row.target_weight_kg) : null,
     activityLevel: row.activity_level,
     fitnessGoal: row.fitness_goal,
     allergies: row.allergies || [],
     dietaryPreferences: row.dietary_preferences || [],
+    medicalHistory: row.medical_history || [],
+    favoriteFoods: row.favorite_foods || [],
+    isVegan: Boolean(row.is_vegan),
+    dietLifestyle: row.diet_lifestyle || [],
+    cookingFrequency: row.cooking_frequency || 'sometimes',
+    groceryFrequency: row.grocery_frequency || 'weekly',
+    mealPrepEnabled: row.meal_prep_enabled !== false,
+    creatorName: row.creator_name || null,
+    creatorHandle: row.creator_handle || null,
+    creatorBio: row.creator_bio || null,
+    cookingSpecialties: row.cooking_specialties || [],
+    kitchenSyncEnabled: row.kitchen_sync_enabled !== false,
+    avatarUrl: row.avatar_url || null,
+    onboardingCompleted: Boolean(row.onboarding_completed),
     targetMacros: row.target_macros || {},
     bmrKcal: Number(row.bmr_kcal),
     tdeeKcal: Number(row.tdee_kcal),
@@ -39,10 +54,7 @@ function serializeProfile(row) {
 router.get('/', async (req, res, next) => {
   try {
     const result = await pool.query(
-      `SELECT sex, date_of_birth, height_cm, weight_kg, activity_level, fitness_goal,
-              allergies, dietary_preferences, target_macros,
-              bmr_kcal, tdee_kcal, calculation_version, updated_at
-       FROM user_profiles WHERE user_id = $1`,
+      `SELECT * FROM user_profiles WHERE user_id = $1`,
       [req.auth.userId]
     );
     if (!result.rows[0]) {
@@ -54,7 +66,7 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.put('/', async (req, res, next) => {
+async function handleSaveProfile(req, res, next) {
   let client;
   try {
     const profile = validateProfile(req.body);
@@ -65,8 +77,19 @@ router.put('/', async (req, res, next) => {
     const result = await client.query(
       `INSERT INTO user_profiles (
         user_id, sex, date_of_birth, height_cm, weight_kg, activity_level, fitness_goal,
-        allergies, dietary_preferences, target_macros, bmr_kcal, tdee_kcal
-      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+        allergies, dietary_preferences, target_macros, bmr_kcal, tdee_kcal,
+        target_weight_kg, medical_history, favorite_foods, is_vegan, diet_lifestyle,
+        cooking_frequency, grocery_frequency, meal_prep_enabled,
+        creator_name, creator_handle, creator_bio, cooking_specialties,
+        kitchen_sync_enabled, avatar_url, onboarding_completed
+      ) VALUES (
+        $1, $2, $3, $4, $5, $6, $7,
+        $8, $9, $10, $11, $12,
+        $13, $14, $15, $16, $17,
+        $18, $19, $20,
+        $21, $22, $23, $24,
+        $25, $26, $27
+      )
       ON CONFLICT (user_id) DO UPDATE SET
         sex = EXCLUDED.sex,
         date_of_birth = EXCLUDED.date_of_birth,
@@ -79,10 +102,23 @@ router.put('/', async (req, res, next) => {
         target_macros = EXCLUDED.target_macros,
         bmr_kcal = EXCLUDED.bmr_kcal,
         tdee_kcal = EXCLUDED.tdee_kcal,
+        target_weight_kg = EXCLUDED.target_weight_kg,
+        medical_history = EXCLUDED.medical_history,
+        favorite_foods = EXCLUDED.favorite_foods,
+        is_vegan = EXCLUDED.is_vegan,
+        diet_lifestyle = EXCLUDED.diet_lifestyle,
+        cooking_frequency = EXCLUDED.cooking_frequency,
+        grocery_frequency = EXCLUDED.grocery_frequency,
+        meal_prep_enabled = EXCLUDED.meal_prep_enabled,
+        creator_name = EXCLUDED.creator_name,
+        creator_handle = EXCLUDED.creator_handle,
+        creator_bio = EXCLUDED.creator_bio,
+        cooking_specialties = EXCLUDED.cooking_specialties,
+        kitchen_sync_enabled = EXCLUDED.kitchen_sync_enabled,
+        avatar_url = EXCLUDED.avatar_url,
+        onboarding_completed = EXCLUDED.onboarding_completed,
         calculation_version = 'mifflin-st-jeor-v1'
-      RETURNING sex, date_of_birth, height_cm, weight_kg, activity_level, fitness_goal,
-                allergies, dietary_preferences, target_macros,
-                bmr_kcal, tdee_kcal, calculation_version, updated_at`,
+      RETURNING *`,
       [
         req.auth.userId,
         profile.sex,
@@ -95,7 +131,22 @@ router.put('/', async (req, res, next) => {
         profile.dietaryPreferences,
         JSON.stringify(profile.targetMacros),
         baseline.bmrKcal,
-        baseline.tdeeKcal
+        baseline.tdeeKcal,
+        profile.targetWeightKg,
+        profile.medicalHistory,
+        profile.favoriteFoods,
+        profile.isVegan,
+        profile.dietLifestyle,
+        profile.cookingFrequency,
+        profile.groceryFrequency,
+        profile.mealPrepEnabled,
+        profile.creatorName,
+        profile.creatorHandle,
+        profile.creatorBio,
+        profile.cookingSpecialties,
+        profile.kitchenSyncEnabled,
+        profile.avatarUrl,
+        profile.onboardingCompleted
       ]
     );
     await client.query(
@@ -114,7 +165,10 @@ router.put('/', async (req, res, next) => {
   } finally {
     client?.release();
   }
-});
+}
+
+router.put('/', handleSaveProfile);
+router.post('/onboarding', handleSaveProfile);
 
 router.get('/stats', async (req, res, next) => {
   try {
