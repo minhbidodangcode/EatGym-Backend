@@ -29,7 +29,7 @@ export const env = Object.freeze({
   databaseUrl: required('DATABASE_URL'),
   databaseSsl: process.env.DATABASE_SSL === 'true',
   jwtSecret,
-  jwtExpiresIn: process.env.JWT_EXPIRES_IN ?? '15m',
+  jwtExpiresIn: process.env.JWT_EXPIRES_IN ?? '90d',
   jwtIssuer: process.env.JWT_ISSUER ?? 'eatgym-api',
   jwtAudience: process.env.JWT_AUDIENCE ?? 'eatgym-mobile'
 });
