@@ -129,6 +129,7 @@ export function validateProfile(body) {
     cookingSpecialties: stringList(input.cookingSpecialties, 'cookingSpecialties'),
     kitchenSyncEnabled: booleanFlag(input.kitchenSyncEnabled, true),
     avatarUrl: optionalString(input.avatarUrl, 'avatarUrl', 500),
+    isFoodBlogPrivate: booleanFlag(input.isFoodBlogPrivate, false),
     onboardingCompleted: booleanFlag(input.onboardingCompleted, true),
     targetMacros
   };

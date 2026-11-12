@@ -35,6 +35,7 @@ test('profile validation accepts 4-step onboarding attributes', () => {
     creatorBio: 'Ăn sạch - Tập chuẩn - Tối ưu macro',
     cookingSpecialties: ['EatClean', 'HighProtein'],
     kitchenSyncEnabled: true,
+    isFoodBlogPrivate: true,
     onboardingCompleted: true
   });
   assert.equal(result.targetWeightKg, 65);
@@ -43,6 +44,7 @@ test('profile validation accepts 4-step onboarding attributes', () => {
   assert.equal(result.isVegan, true);
   assert.equal(result.onlineShoppingWhenNeeded, true);
   assert.deepEqual(result.linkedShoppingApps, ['WinMart', 'ShopeeFood']);
+  assert.equal(result.isFoodBlogPrivate, true);
   assert.equal(result.creatorHandle, '@minhgymer');
   assert.equal(result.onboardingCompleted, true);
 });

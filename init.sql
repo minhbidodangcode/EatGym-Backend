@@ -439,6 +439,7 @@ CREATE TABLE public.user_profiles (
     cooking_specialties text[] DEFAULT '{}'::text[],
     kitchen_sync_enabled boolean DEFAULT true,
     avatar_url text,
+    is_foodblog_private boolean DEFAULT false,
     onboarding_completed boolean DEFAULT false,
     CONSTRAINT profile_birth_date_range CHECK ((date_of_birth >= '1900-01-01'::date)),
     CONSTRAINT profile_bmr_positive CHECK ((bmr_kcal > (0)::numeric)),

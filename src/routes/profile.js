@@ -44,6 +44,7 @@ function serializeProfile(row) {
     cookingSpecialties: row.cooking_specialties || [],
     kitchenSyncEnabled: row.kitchen_sync_enabled !== false,
     avatarUrl: row.avatar_url || null,
+    isFoodBlogPrivate: Boolean(row.is_foodblog_private),
     onboardingCompleted: Boolean(row.onboarding_completed),
     targetMacros: row.target_macros || {},
     bmrKcal: Number(row.bmr_kcal),
@@ -83,14 +84,14 @@ async function handleSaveProfile(req, res, next) {
         target_weight_kg, medical_history, favorite_foods, is_vegan, diet_lifestyle,
         cooking_frequency, grocery_frequency, online_shopping_when_needed, linked_shopping_apps, meal_prep_enabled,
         creator_name, creator_handle, creator_bio, cooking_specialties,
-        kitchen_sync_enabled, avatar_url, onboarding_completed
+        kitchen_sync_enabled, avatar_url, is_foodblog_private, onboarding_completed
       ) VALUES (
         $1, $2, $3, $4, $5, $6, $7,
         $8, $9, $10, $11, $12,
         $13, $14, $15, $16, $17,
         $18, $19, $20, $21, $22,
         $23, $24, $25, $26,
-        $27, $28, $29
+        $27, $28, $29, $30
       )
       ON CONFLICT (user_id) DO UPDATE SET
         sex = EXCLUDED.sex,
@@ -120,6 +121,7 @@ async function handleSaveProfile(req, res, next) {
         cooking_specialties = EXCLUDED.cooking_specialties,
         kitchen_sync_enabled = EXCLUDED.kitchen_sync_enabled,
         avatar_url = EXCLUDED.avatar_url,
+        is_foodblog_private = EXCLUDED.is_foodblog_private,
         onboarding_completed = EXCLUDED.onboarding_completed,
         calculation_version = 'mifflin-st-jeor-v1'
       RETURNING *`,
@@ -152,6 +154,7 @@ async function handleSaveProfile(req, res, next) {
         profile.cookingSpecialties,
         profile.kitchenSyncEnabled,
         profile.avatarUrl,
+        profile.isFoodBlogPrivate,
         profile.onboardingCompleted
       ]
     );
