@@ -430,6 +430,8 @@ CREATE TABLE public.user_profiles (
     diet_lifestyle text[] DEFAULT '{}'::text[],
     cooking_frequency character varying(50) DEFAULT 'sometimes'::character varying,
     grocery_frequency character varying(50) DEFAULT 'weekly'::character varying,
+    online_shopping_when_needed boolean DEFAULT true,
+    linked_shopping_apps text[] DEFAULT '{}'::text[],
     meal_prep_enabled boolean DEFAULT true,
     creator_name character varying(120),
     creator_handle character varying(60),

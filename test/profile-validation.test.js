@@ -27,6 +27,8 @@ test('profile validation accepts 4-step onboarding attributes', () => {
     dietLifestyle: ['Eat Clean'],
     cookingFrequency: 'daily',
     groceryFrequency: 'weekly',
+    onlineShoppingWhenNeeded: true,
+    linkedShoppingApps: ['WinMart', 'ShopeeFood'],
     mealPrepEnabled: true,
     creatorName: 'Chef Minh Gymer',
     creatorHandle: '@minhgymer',
@@ -39,6 +41,8 @@ test('profile validation accepts 4-step onboarding attributes', () => {
   assert.deepEqual(result.medicalHistory, ['Gout', 'Tiểu đường']);
   assert.deepEqual(result.favoriteFoods, ['Ức gà', 'Cá hồi']);
   assert.equal(result.isVegan, true);
+  assert.equal(result.onlineShoppingWhenNeeded, true);
+  assert.deepEqual(result.linkedShoppingApps, ['WinMart', 'ShopeeFood']);
   assert.equal(result.creatorHandle, '@minhgymer');
   assert.equal(result.onboardingCompleted, true);
 });

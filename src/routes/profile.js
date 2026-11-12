@@ -35,6 +35,8 @@ function serializeProfile(row) {
     dietLifestyle: row.diet_lifestyle || [],
     cookingFrequency: row.cooking_frequency || 'sometimes',
     groceryFrequency: row.grocery_frequency || 'weekly',
+    onlineShoppingWhenNeeded: row.online_shopping_when_needed !== false,
+    linkedShoppingApps: row.linked_shopping_apps || [],
     mealPrepEnabled: row.meal_prep_enabled !== false,
     creatorName: row.creator_name || null,
     creatorHandle: row.creator_handle || null,
@@ -79,16 +81,16 @@ async function handleSaveProfile(req, res, next) {
         user_id, sex, date_of_birth, height_cm, weight_kg, activity_level, fitness_goal,
         allergies, dietary_preferences, target_macros, bmr_kcal, tdee_kcal,
         target_weight_kg, medical_history, favorite_foods, is_vegan, diet_lifestyle,
-        cooking_frequency, grocery_frequency, meal_prep_enabled,
+        cooking_frequency, grocery_frequency, online_shopping_when_needed, linked_shopping_apps, meal_prep_enabled,
         creator_name, creator_handle, creator_bio, cooking_specialties,
         kitchen_sync_enabled, avatar_url, onboarding_completed
       ) VALUES (
         $1, $2, $3, $4, $5, $6, $7,
         $8, $9, $10, $11, $12,
         $13, $14, $15, $16, $17,
-        $18, $19, $20,
-        $21, $22, $23, $24,
-        $25, $26, $27
+        $18, $19, $20, $21, $22,
+        $23, $24, $25, $26,
+        $27, $28, $29
       )
       ON CONFLICT (user_id) DO UPDATE SET
         sex = EXCLUDED.sex,
@@ -109,6 +111,8 @@ async function handleSaveProfile(req, res, next) {
         diet_lifestyle = EXCLUDED.diet_lifestyle,
         cooking_frequency = EXCLUDED.cooking_frequency,
         grocery_frequency = EXCLUDED.grocery_frequency,
+        online_shopping_when_needed = EXCLUDED.online_shopping_when_needed,
+        linked_shopping_apps = EXCLUDED.linked_shopping_apps,
         meal_prep_enabled = EXCLUDED.meal_prep_enabled,
         creator_name = EXCLUDED.creator_name,
         creator_handle = EXCLUDED.creator_handle,
@@ -139,6 +143,8 @@ async function handleSaveProfile(req, res, next) {
         profile.dietLifestyle,
         profile.cookingFrequency,
         profile.groceryFrequency,
+        profile.onlineShoppingWhenNeeded,
+        profile.linkedShoppingApps,
         profile.mealPrepEnabled,
         profile.creatorName,
         profile.creatorHandle,

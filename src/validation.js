@@ -120,6 +120,8 @@ export function validateProfile(body) {
     dietLifestyle: stringList(input.dietLifestyle, 'dietLifestyle'),
     cookingFrequency: optionalString(input.cookingFrequency, 'cookingFrequency', 50) || 'sometimes',
     groceryFrequency: optionalString(input.groceryFrequency, 'groceryFrequency', 50) || 'weekly',
+    onlineShoppingWhenNeeded: booleanFlag(input.onlineShoppingWhenNeeded, true),
+    linkedShoppingApps: stringList(input.linkedShoppingApps, 'linkedShoppingApps'),
     mealPrepEnabled: booleanFlag(input.mealPrepEnabled, true),
     creatorName: optionalString(input.creatorName, 'creatorName', 120),
     creatorHandle: optionalString(input.creatorHandle, 'creatorHandle', 60),
