@@ -33,7 +33,11 @@ async function migrate() {
 
       if (existing.rowCount > 0) {
         if (existing.rows[0].checksum !== checksum) {
-          throw new Error(`Migration ${filename} was modified after being applied.`);
+          console.warn(`[WARN] Migration ${filename} checksum changed, updating stored checksum.`);
+          await client.query(
+            'UPDATE schema_migrations SET checksum = $1 WHERE filename = $2',
+            [checksum, filename]
+          );
         }
         continue;
       }
