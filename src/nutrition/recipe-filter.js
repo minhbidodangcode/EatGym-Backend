@@ -230,11 +230,11 @@ export function buildRecipeFilterQuery(query = {}, startParamIndex = 1) {
   }
 
   // 14. Pagination (limit, offset)
-  let limit = 20;
+  let limit = 1000;
   if (query.limit !== undefined && query.limit !== null && query.limit !== '') {
     const parsedLimit = parseInt(query.limit, 10);
     if (!Number.isNaN(parsedLimit) && parsedLimit > 0) {
-      limit = Math.min(parsedLimit, 100);
+      limit = Math.min(parsedLimit, 5000);
     }
   }
 
