@@ -47,7 +47,7 @@ test('buildRecipeFilterQuery generates defaults for empty input', () => {
   assert.equal(result.whereClause, '');
   assert.deepEqual(result.params, []);
   assert.equal(result.sortClause, 'r.title ASC');
-  assert.equal(result.limit, 20);
+  assert.equal(result.limit, 1000);
   assert.equal(result.offset, 0);
 });
 
@@ -134,11 +134,12 @@ test('buildRecipeFilterQuery validates sorting options and falls back to default
   assert.equal(buildRecipeFilterQuery({ sort: 'unsupported_sort' }).sortClause, 'r.title ASC');
 });
 
-test('buildRecipeFilterQuery clamps limit between 1 and 100, and ensures offset >= 0', () => {
-  assert.equal(buildRecipeFilterQuery({ limit: '150' }).limit, 100);
+test('buildRecipeFilterQuery clamps limit between 1 and 5000, and ensures offset >= 0', () => {
+  assert.equal(buildRecipeFilterQuery({ limit: '6000' }).limit, 5000);
+  assert.equal(buildRecipeFilterQuery({ limit: '150' }).limit, 150);
   assert.equal(buildRecipeFilterQuery({ limit: '50' }).limit, 50);
-  assert.equal(buildRecipeFilterQuery({ limit: '-5' }).limit, 20);
-  assert.equal(buildRecipeFilterQuery({ limit: 'abc' }).limit, 20);
+  assert.equal(buildRecipeFilterQuery({ limit: '-5' }).limit, 1000);
+  assert.equal(buildRecipeFilterQuery({ limit: 'abc' }).limit, 1000);
   assert.equal(buildRecipeFilterQuery({ offset: '40' }).offset, 40);
   assert.equal(buildRecipeFilterQuery({ offset: '-10' }).offset, 0);
 });
